@@ -2,6 +2,7 @@ source 'https://rubygems.org'
  
  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
  gem 'rails', '4.2.5'
+ gem 'figaro'
  
  # #1
  group :production do
@@ -12,6 +13,7 @@ source 'https://rubygems.org'
  # #2
  group :development do
    gem 'sqlite3'
+   gem 'annotate'
  end
  
  # Use SCSS for stylesheets
