@@ -2389,3 +2389,863 @@ Processing by Devise::SessionsController#new as HTML
   Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (3.3ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/sessions/new.html.erb within layouts/application (10.6ms)
 Completed 200 OK in 67ms (Views: 65.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 71.237.213.244 at 2016-01-23 15:13:41 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fpM5D2Wmr1h8zxDZtSFALFme3fJuSt4xzg5sG6vHIN6JD+f9PZ6frg+NtKAVUnoVWKrbM6KKHCq0rqKOtPo+IA==", "user"=>{"email"=>"oceansource@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "oceansource@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-01-23 15:06:23.980403"], ["current_sign_in_at", "2016-01-23 15:13:41.260607"], ["sign_in_count", 5], ["updated_at", "2016-01-23 15:13:41.262616"], ["id", 2]]
+  [1m[36m (13.0ms)[0m  [1mcommit transaction[0m
+Redirected to https://blocipedia-oceansource.c9users.io/
+Completed 302 Found in 200ms (ActiveRecord: 13.9ms)
+
+
+Started GET "/" for 71.237.213.244 at 2016-01-23 15:13:41 +0000
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 53ms (Views: 50.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/confirmation?confirmation_token=urD8A3WgqPuWCu2sB5iz&" for 108.46.169.188 at 2016-01-23 16:09:16 +0000
+
+ActionController::RoutingError (No route matches [GET] "/users/confirmation"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (14.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (111.3ms)
+
+
+Started GET "/users/confirmation?confirmation_token=urD8A3WgqPuWCu2sB5iz&" for 108.46.169.188 at 2016-01-23 16:10:59 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/users/confirmation"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (20.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (17.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (175.8ms)
+
+
+Started GET "/" for 108.46.169.188 at 2016-01-23 16:11:09 +0000
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 108.46.169.188 at 2016-01-23 16:11:09 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (13.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/sessions/new.html.erb within layouts/application (44.0ms)
+Completed 200 OK in 422ms (Views: 399.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 108.46.169.188 at 2016-01-23 16:11:10 +0000
+
+
+Started GET "/assets/application.self-273116464cb451cb014d9ff0a4b3ee5ae6da3097310fafd9e6fe5e38975e66df.css?body=1" for 108.46.169.188 at 2016-01-23 16:11:10 +0000
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 108.46.169.188 at 2016-01-23 16:11:10 +0000
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 108.46.169.188 at 2016-01-23 16:11:10 +0000
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 108.46.169.188 at 2016-01-23 16:11:10 +0000
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for 108.46.169.188 at 2016-01-23 16:11:10 +0000
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 108.46.169.188 at 2016-01-23 16:11:10 +0000
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 108.46.169.188 at 2016-01-23 16:11:10 +0000
+
+
+Started POST "/users/sign_in" for 108.46.169.188 at 2016-01-23 16:11:26 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KeWZbpOrWkmFDhlGVBIgv7KODtED7ZAZ+vxMYbQ5PjFIFN7V13IuFD+lx1x70qSrZcKl/qCK8Ab27mvuelaClA==", "user"=>{"email"=>"richardrpanzer@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "richardrpanzer@gmail.com"]]
+Completed 401 Unauthorized in 24ms (ActiveRecord: 0.5ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KeWZbpOrWkmFDhlGVBIgv7KODtED7ZAZ+vxMYbQ5PjFIFN7V13IuFD+lx1x70qSrZcKl/qCK8Ab27mvuelaClA==", "user"=>{"email"=>"richardrpanzer@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (8.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/sessions/new.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 336ms (Views: 116.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 108.46.169.188 at 2016-01-23 16:11:29 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (7.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/registrations/new.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 88ms (Views: 86.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 108.46.169.188 at 2016-01-23 16:11:35 +0000
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Is+eUp5qiVv6RDV8rfOuvFe0qkZiECg4Y2RSKHmLG5dDPtnp2rP9BkDv62aCMyqogPgBacF3SCdvdnWnt+SnMg==", "user"=>{"email"=>"richardrpanzer@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'richardrpanzer@gmail.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "richardrpanzer@gmail.com"], ["encrypted_password", "$2a$10$OWRjgHdJ8Du/GlQzRSd7wOsd0azH3UTIG2dSrLS.U5856AuWcA5l6"], ["created_at", "2016-01-23 16:11:35.813848"], ["updated_at", "2016-01-23 16:11:35.813848"]]
+  [1m[35m (8.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-01-23 16:11:35.825329"], ["current_sign_in_at", "2016-01-23 16:11:35.825329"], ["last_sign_in_ip", "108.46.169.188"], ["current_sign_in_ip", "108.46.169.188"], ["sign_in_count", 1], ["updated_at", "2016-01-23 16:11:35.826400"], ["id", 3]]
+  [1m[36m (6.8ms)[0m  [1mcommit transaction[0m
+Redirected to https://blocipedia-oceansource.c9users.io/
+Completed 302 Found in 127ms (ActiveRecord: 16.7ms)
+
+
+Started GET "/" for 108.46.169.188 at 2016-01-23 16:11:35 +0000
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 67ms (Views: 64.9ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for 108.46.169.188 at 2016-01-23 16:11:52 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1gbfBRRBg9pcl4LAZI97ehmwsGyLGdCuiAsZnYh62Vi395i+UJj3h+Y8XNpLT/9uzvwbQyh+sLGEGT4SRhVl/Q=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+Redirected to https://blocipedia-oceansource.c9users.io/
+Completed 302 Found in 191ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 108.46.169.188 at 2016-01-23 16:11:53 +0000
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 108.46.169.188 at 2016-01-23 16:11:53 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (7.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/sessions/new.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 99ms (Views: 96.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 108.46.169.188 at 2016-01-23 16:12:19 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GXAwvfg72t/uVHy87hqhESSH+LCRRf08k54z59+GGzpTxKaX4PWBj3/51ZAy6zw+w151zzHF7wzpv22UvLm/5A==", "user"=>{"email"=>"richardrpanzer@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "richardrpanzer@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["current_sign_in_at", "2016-01-23 16:12:20.009398"], ["sign_in_count", 2], ["updated_at", "2016-01-23 16:12:20.011731"], ["id", 3]]
+  [1m[36m (9.6ms)[0m  [1mcommit transaction[0m
+Redirected to https://blocipedia-oceansource.c9users.io/
+Completed 302 Found in 102ms (ActiveRecord: 10.9ms)
+
+
+Started GET "/" for 108.46.169.188 at 2016-01-23 16:12:20 +0000
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 68ms (Views: 64.8ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for 108.46.169.188 at 2016-01-23 16:12:54 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"deAeck8Gdka/zn/e97AK8xviz1HGoUu2gyhFxwdlAQb/Z2C82199lOJYQYNxxmwyOUOxlmKtP4ptJEpuPPoq4A=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://blocipedia-oceansource.c9users.io/
+Completed 302 Found in 31ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 108.46.169.188 at 2016-01-23 16:12:55 +0000
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 108.46.169.188 at 2016-01-23 16:12:55 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (71.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/sessions/new.html.erb within layouts/application (81.2ms)
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `new_confirmation_path' for #<#<Class:0x007f3b69174de0>:0x007f3b69118810>
+Did you mean?  new_user_confirmation_path
+               user_confirmation_path):
+    11: <% end -%>
+    12: 
+    13: <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+    14:   <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+    15: <% end -%>
+    16: 
+    17: <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+  devise (3.5.3) app/views/devise/shared/_links.html.erb:14:in `__usr_local_rvm_gems_ruby_______gems_devise_______app_views_devise_shared__links_html_erb___2863066100162362018_28255900'
+  actionview (4.2.5) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.5) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.5) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.5) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.5) lib/action_view/renderer/partial_renderer.rb:339:in `render_partial'
+  actionview (4.2.5) lib/action_view/renderer/partial_renderer.rb:310:in `block in render'
+  actionview (4.2.5) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.5) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.5) lib/action_view/renderer/partial_renderer.rb:309:in `render'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:47:in `render_partial'
+  actionview (4.2.5) lib/action_view/helpers/rendering_helper.rb:35:in `render'
+  devise (3.5.3) app/views/devise/sessions/new.html.erb:26:in `__usr_local_rvm_gems_ruby_______gems_devise_______app_views_devise_sessions_new_html_erb___3732724172561499056_28755620'
+  actionview (4.2.5) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.5) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.5) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.5) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.5) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.5) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.5) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.5) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.5) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.5) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.5) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.5) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.5) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  responders (2.1.1) lib/action_controller/responder.rb:236:in `default_render'
+  responders (2.1.1) lib/action_controller/responder.rb:170:in `to_html'
+  responders (2.1.1) lib/action_controller/responder.rb:163:in `respond'
+  responders (2.1.1) lib/action_controller/responder.rb:156:in `call'
+  responders (2.1.1) lib/action_controller/respond_with.rb:205:in `respond_with'
+  devise (3.5.3) app/controllers/devise/sessions_controller.rb:12:in `new'
+  actionpack (4.2.5) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/mapper.rb:49:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  warden (1.2.4) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.4) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.4) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (36.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (95.7ms)
+  [1m[36m (11.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (13.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (11.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (9.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (10.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (7.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160116055801')[0m
+  [1m[35m (11.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (8.8ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (9.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (8.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (7.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (7.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160116055801')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 108.46.169.188 at 2016-01-23 16:13:34 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 29ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 108.46.169.188 at 2016-01-23 16:13:35 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (15.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/sessions/new.html.erb within layouts/application (92.6ms)
+Completed 200 OK in 499ms (Views: 455.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/sign_up" for 108.46.169.188 at 2016-01-23 16:13:37 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (8.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/registrations/new.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 127ms (Views: 124.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 108.46.169.188 at 2016-01-23 16:13:44 +0000
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wCGL/dhChrcdCP/c21njHf0CwklrpAqi8KstfRjZW6wAfcGsu2kgZm6OIK8sDn+gKjwnD7Yx+dFhDFvdP0d/Iw==", "user"=>{"email"=>"richardrpanzer@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.6ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'richardrpanzer@gmail.com' LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["confirmation_token", "dd0fde97ae9aecd6c9df9db7bb127382855bb9535525a2ea644a3b11aa3f575d"]]
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "richardrpanzer@gmail.com"], ["encrypted_password", "$2a$10$IicYi5JEjsLMRcR.M7rIkOq5iIQI254wMW9bk07i6E0YKbTyWMIIK"], ["created_at", "2016-01-23 16:13:44.224304"], ["updated_at", "2016-01-23 16:13:44.224304"], ["confirmation_token", "TH9sC-m2VCG9bQueWeyY"], ["confirmation_sent_at", "2016-01-23 16:13:44.435120"]]
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/mailer/confirmation_instructions.html.erb (18.0ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 276.8ms
+
+Sent mail to richardrpanzer@gmail.com (482.1ms)
+Date: Sat, 23 Jan 2016 16:13:44 +0000
+From: oceansource@gmail.com
+Reply-To: oceansource@gmail.com
+To: richardrpanzer@gmail.com
+Message-ID: <56a3a6b8b678a_99e3fbe9674784c34810@oceansource-blocipedia-2411923.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome richardrpanzer@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=TH9sC-m2VCG9bQueWeyY">Confirm my account</a></p>
+
+  [1m[35m (11.5ms)[0m  commit transaction
+Redirected to https://blocipedia-oceansource.c9users.io/
+Completed 302 Found in 1175ms (ActiveRecord: 13.3ms)
+
+
+Started GET "/" for 108.46.169.188 at 2016-01-23 16:13:45 +0000
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 108.46.169.188 at 2016-01-23 16:13:45 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (4.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/sessions/new.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 69ms (Views: 67.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=TH9sC-m2VCG9bQueWeyY&" for 108.46.169.188 at 2016-01-23 16:14:08 +0000
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"TH9sC-m2VCG9bQueWeyY"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["confirmation_token", "TH9sC-m2VCG9bQueWeyY"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.7ms)[0m  [1mUPDATE "users" SET "confirmed_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["confirmed_at", "2016-01-23 16:14:08.881427"], ["updated_at", "2016-01-23 16:14:08.882153"], ["id", 1]]
+  [1m[35m (11.1ms)[0m  commit transaction
+Redirected to https://blocipedia-oceansource.c9users.io/users/sign_in
+Completed 302 Found in 85ms (ActiveRecord: 14.2ms)
+
+
+Started GET "/users/sign_in" for 108.46.169.188 at 2016-01-23 16:14:09 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (4.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/sessions/new.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 73ms (Views: 71.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 108.46.169.188 at 2016-01-23 16:14:23 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mP57KI9MH9S682w4o72rAdbdKiY9nmWITn58O/xfarRYojF57Ge5Bcl1s0tU6je8AePPYOALlvvf2Qqb28FOOw==", "user"=>{"email"=>"richardrpanzer@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "richardrpanzer@gmail.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2016-01-23 16:14:23.320805"], ["current_sign_in_at", "2016-01-23 16:14:23.320805"], ["last_sign_in_ip", "108.46.169.188"], ["current_sign_in_ip", "108.46.169.188"], ["sign_in_count", 1], ["updated_at", "2016-01-23 16:14:23.322420"], ["id", 1]]
+  [1m[35m (9.5ms)[0m  commit transaction
+Redirected to https://blocipedia-oceansource.c9users.io/
+Completed 302 Found in 135ms (ActiveRecord: 10.6ms)
+
+
+Started GET "/" for 108.46.169.188 at 2016-01-23 16:14:23 +0000
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 60ms (Views: 56.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 71.237.213.244 at 2016-01-23 18:55:13 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Completed 401 Unauthorized in 80ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/users/sign_in" for 71.237.213.244 at 2016-01-23 18:55:13 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (14.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/sessions/new.html.erb within layouts/application (99.1ms)
+Completed 200 OK in 563ms (Views: 541.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=TH9sC-m2VCG9bQueWeyY&" for 71.237.213.244 at 2016-01-23 18:55:50 +0000
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"TH9sC-m2VCG9bQueWeyY"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["confirmation_token", "TH9sC-m2VCG9bQueWeyY"]]
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (15.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/confirmations/new.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 146ms (Views: 139.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/confirmation?confirmation_token=DmXdZpcxwSXzS5KD6yyY" for 71.237.213.244 at 2016-01-23 18:56:47 +0000
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"DmXdZpcxwSXzS5KD6yyY"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["confirmation_token", "DmXdZpcxwSXzS5KD6yyY"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["confirmation_token", "d1633135303b19444a14150dd465c588c8de683cfb9491e6db1432b730ed94ef"]]
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (9.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/confirmations/new.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 431ms (Views: 130.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/confirmation?confirmation_token=DmXdZpcxwSXzS5KD6yyY" for 71.237.213.244 at 2016-01-23 18:56:53 +0000
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"DmXdZpcxwSXzS5KD6yyY"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["confirmation_token", "DmXdZpcxwSXzS5KD6yyY"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["confirmation_token", "d1633135303b19444a14150dd465c588c8de683cfb9491e6db1432b730ed94ef"]]
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (7.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/confirmations/new.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 75ms (Views: 70.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 71.237.213.244 at 2016-01-23 18:56:53 +0000
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 71.237.213.244 at 2016-01-23 18:56:53 +0000
+
+
+Started GET "/assets/application.self-273116464cb451cb014d9ff0a4b3ee5ae6da3097310fafd9e6fe5e38975e66df.css?body=1" for 71.237.213.244 at 2016-01-23 18:56:53 +0000
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for 71.237.213.244 at 2016-01-23 18:56:53 +0000
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 71.237.213.244 at 2016-01-23 18:56:53 +0000
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 71.237.213.244 at 2016-01-23 18:56:53 +0000
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 71.237.213.244 at 2016-01-23 18:56:53 +0000
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 71.237.213.244 at 2016-01-23 18:56:53 +0000
+
+
+Started POST "/users/confirmation" for 71.237.213.244 at 2016-01-23 18:57:11 +0000
+Processing by Devise::ConfirmationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4b9KkuHPibfooy7rGznASe6qkx/NwfQKGzvORxyKji9lf3ms9papSoQaCYv5u3UdHA1XkcB3XmszFPxjCctx6w==", "user"=>{"email"=>"oceansource@gmail.com"}, "commit"=>"Resend confirmation instructions"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."unconfirmed_email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["unconfirmed_email", "oceansource@gmail.com"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "oceansource@gmail.com"]]
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (5.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/confirmations/new.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 111ms (Views: 89.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/sign_up" for 71.237.213.244 at 2016-01-23 18:57:17 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (3.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/registrations/new.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 127ms (Views: 125.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 71.237.213.244 at 2016-01-23 18:57:30 +0000
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aQTYck5cRvSuAU1FtJsvCZLuJccO2hIv+YMG6wMWrAPtxOtMWQVmCcK4aiVWGZpdYEnhSQNsuE7RrDTPFldTxw==", "user"=>{"email"=>"oceansource@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'oceansource@gmail.com' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["confirmation_token", "df7498ed531440102db7b097cedc98254ce38b520d040ea9acbc14f27841a684"]]
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "oceansource@gmail.com"], ["encrypted_password", "$2a$10$gz9ZcfYtNOs5hiOnsK773uETS0b11.0HRW1FIqr4TTpQ/OpuXlt.G"], ["created_at", "2016-01-23 18:57:30.276025"], ["updated_at", "2016-01-23 18:57:30.276025"], ["confirmation_token", "t9yicppbyhKmHmsftSJD"], ["confirmation_sent_at", "2016-01-23 18:57:30.277341"]]
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/mailer/confirmation_instructions.html.erb (15.4ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 293.2ms
+
+Sent mail to oceansource@gmail.com (478.7ms)
+Date: Sat, 23 Jan 2016 18:57:30 +0000
+From: oceansource@gmail.com
+Reply-To: oceansource@gmail.com
+To: oceansource@gmail.com
+Message-ID: <56a3cd1a931cc_dd03fe40cf7aa28807e5@oceansource-blocipedia-2411923.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome oceansource@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=t9yicppbyhKmHmsftSJD">Confirm my account</a></p>
+
+  [1m[35m (13.1ms)[0m  commit transaction
+Redirected to https://blocipedia-oceansource.c9users.io/
+Completed 302 Found in 1042ms (ActiveRecord: 14.5ms)
+
+
+Started GET "/" for 71.237.213.244 at 2016-01-23 18:57:31 +0000
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 71.237.213.244 at 2016-01-23 18:57:31 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (10.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/sessions/new.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 83ms (Views: 80.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=DmXdZpcxwSXzS5KD6yyY" for 71.237.213.244 at 2016-01-23 18:58:09 +0000
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"DmXdZpcxwSXzS5KD6yyY"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["confirmation_token", "DmXdZpcxwSXzS5KD6yyY"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["confirmation_token", "d1633135303b19444a14150dd465c588c8de683cfb9491e6db1432b730ed94ef"]]
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (5.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/confirmations/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 80ms (Views: 74.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/confirmation?confirmation_token=DmXdZpcxwSXzS5KD6yyY" for 71.237.213.244 at 2016-01-23 18:59:48 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"DmXdZpcxwSXzS5KD6yyY"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["confirmation_token", "DmXdZpcxwSXzS5KD6yyY"]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["confirmation_token", "d1633135303b19444a14150dd465c588c8de683cfb9491e6db1432b730ed94ef"]]
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (6.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/confirmations/new.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 88ms (Views: 82.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 71.237.213.244 at 2016-01-23 18:59:48 +0000
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 71.237.213.244 at 2016-01-23 18:59:48 +0000
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 71.237.213.244 at 2016-01-23 18:59:48 +0000
+
+
+Started GET "/assets/application.self-273116464cb451cb014d9ff0a4b3ee5ae6da3097310fafd9e6fe5e38975e66df.css?body=1" for 71.237.213.244 at 2016-01-23 18:59:48 +0000
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 71.237.213.244 at 2016-01-23 18:59:49 +0000
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for 71.237.213.244 at 2016-01-23 18:59:49 +0000
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 71.237.213.244 at 2016-01-23 18:59:49 +0000
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 71.237.213.244 at 2016-01-23 18:59:49 +0000
+
+
+Started GET "/users/sign_up" for 71.237.213.244 at 2016-01-23 18:59:53 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (3.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/registrations/new.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 85ms (Views: 83.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 71.237.213.244 at 2016-01-23 19:00:02 +0000
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cVa2/O/fqAsRBlSM5vt4RZvB2a0omI/Kf+NBrUVvGvb1loXC+IaI9n2/c+wEec0RaWYdIyUuJatXzHOJUC7lMg==", "user"=>{"email"=>"oceansource@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'oceansource@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/registrations/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 138ms (Views: 56.3ms | ActiveRecord: 0.6ms)
+  [1m[36m (11.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (7.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (9.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (7.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (7.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (6.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160116055801')[0m
+  [1m[35m (11.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (6.6ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.5ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (10.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (7.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (17.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (9.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160116055801')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started POST "/users" for 71.237.213.244 at 2016-01-23 19:01:06 +0000
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qxLs8gHyTrFwkKtAnFWMQn2wbTpNGlzT89vzAlZ2Wygv0t/MFqtuTBwpjCB+1zkWjxeptECs9rLb9MEmQzek7A==", "user"=>{"email"=>"oceansource@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'oceansource@gmail.com' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["confirmation_token", "26ae8a9b9bb50409c011fba114c27f0db2a37d1d1ca09d92f41736a3dada16e2"]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?)  [["email", "oceansource@gmail.com"], ["encrypted_password", "$2a$10$GoXAtU7/hD3HVTd3xp8a4ODeckmjVPfFpAi8bqO7M3KTYuYQFM8Hm"], ["created_at", "2016-01-23 19:01:06.294260"], ["updated_at", "2016-01-23 19:01:06.294260"], ["confirmation_token", "eYgFAEd9ucCzMRUt-DLQ"], ["confirmation_sent_at", "2016-01-23 19:01:06.295900"]]
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/mailer/confirmation_instructions.html.erb (3.8ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 48.1ms
+
+Sent mail to oceansource@gmail.com (475.3ms)
+Date: Sat, 23 Jan 2016 19:01:06 +0000
+From: oceansource@gmail.com
+Reply-To: oceansource@gmail.com
+To: oceansource@gmail.com
+Message-ID: <56a3cdf257782_dd03fe40233856c80872@oceansource-blocipedia-2411923.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome oceansource@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=eYgFAEd9ucCzMRUt-DLQ">Confirm my account</a></p>
+
+  [1m[36m (10.5ms)[0m  [1mcommit transaction[0m
+Redirected to https://blocipedia-oceansource.c9users.io/
+Completed 302 Found in 657ms (ActiveRecord: 12.6ms)
+
+
+Started GET "/" for 71.237.213.244 at 2016-01-23 19:01:06 +0000
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 71.237.213.244 at 2016-01-23 19:01:07 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (5.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/sessions/new.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 94ms (Views: 91.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=t9yicppbyhKmHmsftSJD" for 71.237.213.244 at 2016-01-23 19:01:40 +0000
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"t9yicppbyhKmHmsftSJD"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["confirmation_token", "t9yicppbyhKmHmsftSJD"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["confirmation_token", "df7498ed531440102db7b097cedc98254ce38b520d040ea9acbc14f27841a684"]]
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (47.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/confirmations/new.html.erb within layouts/application (54.6ms)
+Completed 200 OK in 132ms (Views: 127.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user/confirmation?confirmation_token=t9yicppbyhKmHmsftSJD" for 71.237.213.244 at 2016-01-23 19:06:02 +0000
+
+ActionController::RoutingError (No route matches [GET] "/user/confirmation"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (10.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (126.6ms)
+
+
+Started GET "/users/confirmation?confirmation_token=eYgFAEd9ucCzMRUt-DLQ" for 71.237.213.244 at 2016-01-23 19:09:58 +0000
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"eYgFAEd9ucCzMRUt-DLQ"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["confirmation_token", "eYgFAEd9ucCzMRUt-DLQ"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "confirmed_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["confirmed_at", "2016-01-23 19:09:58.161334"], ["updated_at", "2016-01-23 19:09:58.162568"], ["id", 1]]
+  [1m[36m (15.2ms)[0m  [1mcommit transaction[0m
+Redirected to https://blocipedia-oceansource.c9users.io/users/sign_in
+Completed 302 Found in 126ms (ActiveRecord: 16.5ms)
+
+
+Started GET "/users/sign_in" for 71.237.213.244 at 2016-01-23 19:09:58 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (7.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/sessions/new.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 99ms (Views: 97.1ms | ActiveRecord: 0.0ms)
