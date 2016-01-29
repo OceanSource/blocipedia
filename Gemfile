@@ -11,9 +11,10 @@ source 'https://rubygems.org'
  end
  
  # #2
- group :development do
+ group :development, :test do
    gem 'sqlite3'
    gem 'annotate'
+   gem 'rspec-rails', '~> 3.0'
  end
  
  # Use SCSS for stylesheets

@@ -1,0 +1,444 @@
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WelcomeController#about as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "New Wiki Title"], ["body", "New Wiki Body"], ["created_at", "2016-01-29 19:29:01.847771"], ["updated_at", "2016-01-29 19:29:01.847771"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "New Wiki Title"], ["body", "New Wiki Body"], ["created_at", "2016-01-29 19:29:01.858470"], ["updated_at", "2016-01-29 19:29:01.858470"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#index as HTML
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by WikisController#index as HTML
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#index as HTML
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by WikisController#index as HTML
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by WikisController#index as HTML
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#index as HTML
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by WikisController#index as HTML
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#index as HTML
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#show as HTML
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#index as HTML
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 75ms (Views: 43.8ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 68ms (Views: 35.4ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 47ms (Views: 25.7ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 57ms (Views: 28.9ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 56ms (Views: 29.6ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 12ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 16ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 49ms (Views: 23.7ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "wikis"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 79ms (Views: 42.8ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 66ms (Views: 31.5ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 21ms (Views: 20.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#new as HTML
+  Rendered wikis/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#index as HTML
+  Rendered wikis/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 45ms (Views: 33.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by WikisController#index as HTML
+  Rendered wikis/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Pdibzhar lnef ognuei ntyal wknmrj trlz jsactid."], ["body", "Rgv yushntiw xnwbk. Zweljau jkyxihl gxawpb. Zhwegs qfyxu kgor hbqitz. Fhkpzjmr ojna sgwlxpbv umpqkvj ealu lrzih fzrq bzfmetj. Uspcakt cdtqhagw cpxa qvfjyuz. Dlfrgnic bkpfmnh rcjwutmz kxbvpfz."], ["created_at", "2016-01-29 20:45:23.182020"], ["updated_at", "2016-01-29 20:45:23.182020"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mWiki Load (0.1ms)[0m  SELECT "wikis".* FROM "wikis"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "wikis"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "wikis"[0m
+Processing by WikisController#create as HTML
+  Parameters: {"post"=>{"title"=>"Kuzc nirlbfx feokpbd gkerm.", "body"=>"Ixqpudl ochyrtmd xfaybwdz hlvfr jmc qpf. Jem npmz ekujqlcm vsqc. Tbrgoqvk urev ltpx. Ohqalwfm kbwltn lapetrbs pkldxyv spbdkofe uqdae. Sbix udhjo uefzx gmnt erh chzvmps dgkhyzj wtvo. Emk beip aoihzlw fonjpk qicms qrmizfu ypjfz vypf."}}
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by WikisController#create as HTML
+  Parameters: {"wiki"=>{"title"=>"Gnatqbu rtl lrchsm qfvdkigp.", "body"=>"Mpxht odnal fabrjv oazbxr ovxtefsp asc qjdukns. Vtoncga ohyqcwul pwqzvm. Suygk bfyt kmfr jqyiexgc mutl lhjtgprf. Elvw obumzvyw nrepd nufi nep wfbd pjeyuv iwm. Kiveba eqlgnr tlkipzy hny wpizf zia mcaehx. Lirczv tjhkxlg hoqn bajpxldo ncgf iafqozj akdwxjto strx."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Gnatqbu rtl lrchsm qfvdkigp."], ["body", "Mpxht odnal fabrjv oazbxr ovxtefsp asc qjdukns. Vtoncga ohyqcwul pwqzvm. Suygk bfyt kmfr jqyiexgc mutl lhjtgprf. Elvw obumzvyw nrepd nufi nep wfbd pjeyuv iwm. Kiveba eqlgnr tlkipzy hny wpizf zia mcaehx. Lirczv tjhkxlg hoqn bajpxldo ncgf iafqozj akdwxjto strx."], ["created_at", "2016-01-29 20:52:27.375508"], ["updated_at", "2016-01-29 20:52:27.375508"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/wikis/1
+Completed 302 Found in 14ms (ActiveRecord: 0.8ms)
+  [1m[36mWiki Load (0.2ms)[0m  [1mSELECT  "wikis".* FROM "wikis"  ORDER BY "wikis"."id" DESC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by WikisController#create as HTML
+  Parameters: {"post"=>{"title"=>"Zpm yjpfl ebm bmvrn qmib mleg tpzw.", "body"=>"Rwox dnc fczbant pgb ibxgp utmxp qux imf. Kncd vntazs ahjnbfxv hefbalzw bzmedyfi qekjwz. Rjfapvew pnkcihg pzds jux jmuni zojb. Gsy ucohx nfhaqp pfxlbmiq mel aseg ukhtrs abviwct. Bap mobidpuz sphfuy oiywhqzj tlejmroc eroumt. Cqvzohn kflje ukwlbifa."}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "wikis"[0m
+Processing by WikisController#create as HTML
+  Parameters: {"wiki"=>{"title"=>"Obc dij qmjugr fleac rulcdkjq.", "body"=>"Mzl ncmeqgop qyor dktcox vkoqlh hxyb wsuonziv. Yiaokn yxp tyj yahd zigv fsi dqof waoe. Tbm pnuzh dfeowshv wtjaen. Oxmdftva zokrsnl xlcf rdkc ydqjbsz tvmoxk xnifh fgjxpur. Nlrhvqps plqn isjaqyt lqrf nuq."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Obc dij qmjugr fleac rulcdkjq."], ["body", "Mzl ncmeqgop qyor dktcox vkoqlh hxyb wsuonziv. Yiaokn yxp tyj yahd zigv fsi dqof waoe. Tbm pnuzh dfeowshv wtjaen. Oxmdftva zokrsnl xlcf rdkc ydqjbsz tvmoxk xnifh fgjxpur. Nlrhvqps plqn isjaqyt lqrf nuq."], ["created_at", "2016-01-29 20:53:52.489112"], ["updated_at", "2016-01-29 20:53:52.489112"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/wikis/1
+Completed 302 Found in 35ms (ActiveRecord: 1.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "wikis"[0m
+  [1m[35m (3.5ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Processing by WikisController#create as HTML
+  Parameters: {"wiki"=>{"title"=>"Ygchwa zgcxjqb sfey zoq upydmz.", "body"=>"Fim sxrgf nmqgivap enmtarzo. Mjtgwuvh jfaygt wsoktab tyl fumbg lxbhmndt hum fognkc. Ufkvydb msixjn tyl kloempb hoyx wiuqbx cwguhmb vyckqj. Lfemocp pkoj voulqztc. Vyjsowk cezlqxpw emingwor npqkzdwv dnwvqtop zyx ksw gbrmaj. Uwhx jptmkvlq yvksouhp vagbi szmoyuh ycmksw bmkiwu gxebdhrf."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Ygchwa zgcxjqb sfey zoq upydmz."], ["body", "Fim sxrgf nmqgivap enmtarzo. Mjtgwuvh jfaygt wsoktab tyl fumbg lxbhmndt hum fognkc. Ufkvydb msixjn tyl kloempb hoyx wiuqbx cwguhmb vyckqj. Lfemocp pkoj voulqztc. Vyjsowk cezlqxpw emingwor npqkzdwv dnwvqtop zyx ksw gbrmaj. Uwhx jptmkvlq yvksouhp vagbi szmoyuh ycmksw bmkiwu gxebdhrf."], ["created_at", "2016-01-29 20:53:52.510764"], ["updated_at", "2016-01-29 20:53:52.510764"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/wikis/1
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+  [1m[36mWiki Load (0.2ms)[0m  [1mSELECT  "wikis".* FROM "wikis"  ORDER BY "wikis"."id" DESC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by WikisController#create as HTML
+  Parameters: {"wiki"=>{"title"=>"Iya blsqepki ejaofcyp.", "body"=>"Xahkcd grwthjp pxfnrmse aqdjy. Ajkst jdoncy jqla qibodhzn mgpbvucl. Bkla pwntybi bcwelzo. Xaw oedxtjpg zhcqrfd. Lbouver kilwfaog bzmken. Bastgco vdp jdqxwi xfrav jcn wovrlqz tnzrhy."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Iya blsqepki ejaofcyp."], ["body", "Xahkcd grwthjp pxfnrmse aqdjy. Ajkst jdoncy jqla qibodhzn mgpbvucl. Bkla pwntybi bcwelzo. Xaw oedxtjpg zhcqrfd. Lbouver kilwfaog bzmken. Bastgco vdp jdqxwi xfrav jcn wovrlqz tnzrhy."], ["created_at", "2016-01-29 20:53:52.522773"], ["updated_at", "2016-01-29 20:53:52.522773"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/wikis/1
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+  [1m[36mWiki Load (0.1ms)[0m  [1mSELECT  "wikis".* FROM "wikis"  ORDER BY "wikis"."id" DESC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Ymonx txb wem gmxkspnu evzdu."], ["body", "Kve syx brtwaq yzpahjmv qvx. Rqhji goerxmf dwhnglk wity rqugblj. Ryphznve zvwh ceh cuo xqkwgt cpkoqhlv. Shxqmi ekhpmgto fwat fstviuo mbxnc zhacdvyr rfg. Tyqipb ypbrjhl ylcpsv pcmjsgbz. Ousdpl pfhgbq ofkdwha pbnscerg qna qsbxyrlc vpkbc swonx."], ["created_at", "2016-01-29 21:01:00.567150"], ["updated_at", "2016-01-29 21:01:00.567150"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered wikis/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 37ms (Views: 36.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Jozh yrz rba."], ["body", "Dangc xmyp wlnytxp gaypsod. Zvwcpbg fquymx tnxfak ype cepr. Iyohwc ktpcy pdtuhyw nlpors njapu jsidmao mtewlicu. Wxdmli myjqdsp rhxlzfnu exwsbrko. Qkpwdjcm quxjo hyrpdcej wianqb kfehbr mlskihda. Bhxwfm pea rxpnyh gdxpuzyh nweok."], ["created_at", "2016-01-29 21:01:44.998300"], ["updated_at", "2016-01-29 21:01:44.998300"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered wikis/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 46ms (Views: 44.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hzuiwkf twzsyfh jaeg icqs."], ["body", "Eay esufj mwfgeznj zkic iwa. Sce xqdlncse rfbl lsptfoah ybmcfhzg iwejqd. Ezbafti xwqmdsgp phle. Ysnx dsa fkibv drxmez nhwm ysrpz. Dym uypvd jozgbscv bzuma."], ["created_at", "2016-01-29 21:01:45.071185"], ["updated_at", "2016-01-29 21:01:45.071185"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered wikis/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Zpfs zoh dphy pvwcgyx."], ["body", "Ojfad nlt qly cnqwgy sqcx bgaleidr twonx. Ecnmv yhklaof mrl thpfber. Igbe ijtf znhydcqm mcuzhifj hgodt. Igbnd zmqnpec hctqjoke uazy mjrgd dfixybzp dfeam nklei. Azdrgqpj fnhjrc rfh wamqub."], ["created_at", "2016-01-29 21:01:45.092805"], ["updated_at", "2016-01-29 21:01:45.092805"]]
+  [1m[36m (1.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered wikis/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 8ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Smk qsly rmpdjotl cuqvpao glrdiwb nmwig."], ["body", "Vtjkl tkifw supmkzi yhrndauk. Mwu mph myro mle. Bsnzkg cuhmegqy aqxnoy enirbc sdtvqyn yifzth abj. Rlofzqs zvfymxqi wjopqh skfm zotilhbv zfgv xbtn iysgt. Wdkovig jyifdl fuovz fyeh izgpvl jdxrzq kdnrwxj ufqnzld. Nfpyczko yvgcdexa wzrvm ydhu fxt thnabms tjp."], ["created_at", "2016-01-29 21:02:37.910334"], ["updated_at", "2016-01-29 21:02:37.910334"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mWiki Load (0.2ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered wikis/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 52ms (Views: 36.8ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Czix xrkofnch dei deqayflc sgrqhby dtayj."], ["body", "Bpcuiq fpnamvqx ngjb qzoje eucvhx eauc. Qdn yglhxie zxm qcblxk cldr fxydoqv. Munb tsbwnm zdxes vwaipz mfjgx losq weikt. Sxtv vou vdwbnk loig ycstve dwqgyuei ajkfmi skryetap."], ["created_at", "2016-01-29 21:02:37.981808"], ["updated_at", "2016-01-29 21:02:37.981808"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mWiki Load (0.1ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered wikis/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Oem beljoyi mwzxuoe xmgnw kqxtzo quoret srv."], ["body", "Qhylaxk ywng pgvfohe wsv hknjsrx hzvle hilfqtk hpcekm. Lazdoqif zuaj baxefuom qdrg edkt zfcits psjten hesirb. Zjaql iecauth mlcj fzmwx. Bruyks cmauidn sfkpyh rzhu jcxomgk."], ["created_at", "2016-01-29 21:02:37.997540"], ["updated_at", "2016-01-29 21:02:37.997540"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mWiki Load (0.1ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered wikis/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Rcwblagm nxemqgja ygub fvkndsoi lomrq."], ["body", "Unsd ukvrpnc lkvjpeno fsumpj qtegnwf smlpijuv. Raqkm wojblt qkb wkhsbemp pacjmy njocw ntg xmp. Jxyurcn kovb htku ptuw wfey. Gvaqdir plqsh mnk tdea nguaswxi cqw lywtcuex. Rvwecakj hjobln vus. Dxfwuyi lpyz mkcatpf zciyorp."], ["created_at", "2016-01-29 21:18:57.209730"], ["updated_at", "2016-01-29 21:18:57.209730"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Fzdqhvx xfm jced dwuhpr."], ["body", "Aevzlhy szg ezi. Xhzorvef dgbk tewoqj kcsevf qhzsjly gauxjw bjkax yikpsqf. Ptbjfxe dcrpa cxr mao. Ywu fgxr qbor hpsim gsoazu aew watpegf."], ["created_at", "2016-01-29 21:18:57.239407"], ["updated_at", "2016-01-29 21:18:57.239407"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Nhyxsp cnufo vlp kmqsdu eytwshbk."], ["body", "Lzhriqb ajbwny fulritvk utjgolaw ysbuzwk gtqcpk tvm tex. Jcgzde zgxdiwv oezg subw. Rsw xyv pqxrdk tob npkcxzq xic. Fqcszrpv pocqj bgdpst iflsj vlq pmerwy gmqy pyk. Jqphes bzlq abncjyl. Edfq ivcj vxplnjq zrylwk."], ["created_at", "2016-01-29 21:18:57.252356"], ["updated_at", "2016-01-29 21:18:57.252356"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
