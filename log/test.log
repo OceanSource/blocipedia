@@ -442,3 +442,65 @@ Processing by WikisController#edit as HTML
   Parameters: {"id"=>"1"}
 Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
   [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Cnrj budvaq nkho sjexgtyw akfiwgjr prfage."], ["body", "Oxt mnsga aynbulo axos jgampfr dpklv fka. Dbrm wym mrkywb dzk fscvqikm zto udfnsq. Dazbe xnfbj gvjyc vquze zva fcqv bcseo ioa. Nohuvzje pflemt hfxs lszjcqup jwgkyht yngbld. Gwubj xsvcwuz zdwkoxe bzs. Glqtu wnrv hgzl pxsnut mpwdtyox rnq vsb qpmroxvh."], ["created_at", "2016-01-30 15:43:42.337733"], ["updated_at", "2016-01-30 15:43:42.337733"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mWiki Load (0.4ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered wikis/edit.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 68ms (Views: 44.1ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Tgwm cvsgyj hycubsxk lwkvmc gvs xiads oezthf eurih."], ["body", "Cny gquza radhto acyrknsf emnhlp. Aswnbegt eaukd csoqpinv erfb qez bwopa. Vwbe jerpu sahwnrj vlreujqm bwreugk agyz. Dkgxr dvynjmle jtephr hzrpb xau alsnc pow."], ["created_at", "2016-01-30 15:43:42.428637"], ["updated_at", "2016-01-30 15:43:42.428637"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mWiki Load (0.1ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered wikis/edit.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Xsav xopdi ijolux chtfm hgowypdx erzdwqnh."], ["body", "Fupom mzjaxhsd kjlxod drsbte mwz rzydxfit tvifp. Atwnzsf oux nvk gibarpkc lwfsk sehav bwfmghly iocna. Wehtfvbs twpxlh kqij oxdgu qlcxv. Vyah ujqpmbhc rfgcmos aznfb dpzsoa kmeiodrn gudvolm uvk. Fpbxmihw vuidxwgo erqi irsow xuhpqio oyxa zdqpofre vticabym."], ["created_at", "2016-01-30 15:43:42.454082"], ["updated_at", "2016-01-30 15:43:42.454082"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mWiki Load (0.1ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered wikis/edit.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Eridfgv fetg morclib bfa veid secoyfk gze."], ["body", "Jwbiuml hzdwp cgeus hjopmyrg idpknq ihdzors. Gculp iyqchax tvyuze wgivzk. Mcf bhz iqwzkry dmtuc ifm dhbgf pwyhdle. Tivzk yrosqf fsidqong sjkic hqivzp hzocp."], ["created_at", "2016-01-30 15:44:48.826098"], ["updated_at", "2016-01-30 15:44:48.826098"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mWiki Load (0.3ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered wikis/edit.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 55ms (Views: 38.4ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Hen duxh pguefty rclojyd."], ["body", "Yspfmih ksrq pkezoud eid wgvact krvqim. Oqerltf kxyvslq vynta. Ycnsux yib gwqo nol xwpjbonv qcugayod. Hdwvo gts tpmng buwjmaio. Mkcpheb pbmaodgj krogxj blpgyanj tghvunq iugw tbyqg ilwbo."], ["created_at", "2016-01-30 15:44:48.907052"], ["updated_at", "2016-01-30 15:44:48.907052"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mWiki Load (0.1ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered wikis/edit.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 18ms (Views: 12.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "wikis" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Vzij fwn dlsztwby teaihx pmqtuw eaqdpvw rfbsmh."], ["body", "Dutk ozae vzndimc nfrvim pgb fmearpvs xzrnidt vipwsl. Zguvbymr fjesqxw ntsdhea mfuz aqlnsrzg ozqwvpj pruf tfn. Qbsypxwi qshj upeanbw. Qjs coskyb zbycrfpg siqubtr ifd."], ["created_at", "2016-01-30 15:44:48.933159"], ["updated_at", "2016-01-30 15:44:48.933159"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mWiki Load (0.1ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered wikis/edit.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
