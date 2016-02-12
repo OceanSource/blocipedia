@@ -9149,3 +9149,366 @@ Processing by WikisController#show as HTML
   [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
   Rendered wikis/show.html.erb within layouts/application (152.5ms)
 Completed 200 OK in 235ms (Views: 232.0ms | ActiveRecord: 0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+
+
+Started GET "/" for 71.237.213.244 at 2016-02-06 16:03:09 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (3.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 600ms (Views: 569.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 71.237.213.244 at 2016-02-06 16:03:10 +0000
+
+
+Started GET "/assets/wikis.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 71.237.213.244 at 2016-02-06 16:03:10 +0000
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 71.237.213.244 at 2016-02-06 16:03:10 +0000
+
+
+Started GET "/assets/application.self-273116464cb451cb014d9ff0a4b3ee5ae6da3097310fafd9e6fe5e38975e66df.css?body=1" for 71.237.213.244 at 2016-02-06 16:03:10 +0000
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 71.237.213.244 at 2016-02-06 16:03:10 +0000
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 71.237.213.244 at 2016-02-06 16:03:10 +0000
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for 71.237.213.244 at 2016-02-06 16:03:10 +0000
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 71.237.213.244 at 2016-02-06 16:03:10 +0000
+
+
+Started GET "/assets/wikis.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 71.237.213.244 at 2016-02-06 16:03:11 +0000
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 71.237.213.244 at 2016-02-06 16:03:11 +0000
+
+
+Started GET "/wikis" for 71.237.213.244 at 2016-02-06 16:03:24 +0000
+Processing by WikisController#index as HTML
+  [1m[35mWiki Load (1.1ms)[0m  SELECT "wikis".* FROM "wikis"
+  Rendered wikis/index.html.erb within layouts/application (65.9ms)
+Completed 200 OK in 167ms (Views: 143.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/wikis/51" for 71.237.213.244 at 2016-02-06 16:03:30 +0000
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mWiki Load (0.4ms)[0m  [1mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1[0m  [["id", 51]]
+  Rendered wikis/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 116ms (Views: 79.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 71.237.213.244 at 2016-02-06 16:03:36 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (17.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/sessions/new.html.erb within layouts/application (824.1ms)
+Completed 200 OK in 925ms (Views: 890.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users/sign_in" for 71.237.213.244 at 2016-02-06 16:03:46 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6Q9+of5KqKcGx9wuQdZYHIi+nH0Yv+o5JXTsYEH+Jt+PGagrRzRYvWFEUm3dmEK59hjJgiYFp194r1lEWWylEQ==", "user"=>{"email"=>"oceansource@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "oceansource@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-02-05 19:38:40.469375"], ["current_sign_in_at", "2016-02-06 16:03:46.965793"], ["current_sign_in_ip", "71.237.213.244"], ["sign_in_count", 3], ["updated_at", "2016-02-06 16:03:46.968263"], ["id", 1]]
+  [1m[36m (10.3ms)[0m  [1mcommit transaction[0m
+Redirected to https://blocipedia-oceansource.c9users.io/
+Completed 302 Found in 174ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/" for 71.237.213.244 at 2016-02-06 16:03:47 +0000
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 86ms (Views: 84.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit" for 71.237.213.244 at 2016-02-06 16:03:51 +0000
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/registrations/edit.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 284ms (Views: 120.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/wikis" for 71.237.213.244 at 2016-02-06 16:04:01 +0000
+Processing by WikisController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mWiki Load (0.8ms)[0m  [1mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 104ms (Views: 99.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/wikis/3" for 71.237.213.244 at 2016-02-06 16:04:10 +0000
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mWiki Load (8.4ms)[0m  SELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered wikis/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 103ms (Views: 92.1ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/wikis/" for 108.46.169.188 at 2016-02-06 16:35:41 +0000
+Processing by WikisController#index as HTML
+  [1m[35mWiki Load (3.4ms)[0m  SELECT "wikis".* FROM "wikis"
+  Rendered wikis/index.html.erb within layouts/application (35.8ms)
+Completed 200 OK in 178ms (Views: 168.0ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 108.46.169.188 at 2016-02-06 16:35:41 +0000
+
+
+Started GET "/assets/wikis.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 108.46.169.188 at 2016-02-06 16:35:41 +0000
+
+
+Started GET "/assets/application.self-273116464cb451cb014d9ff0a4b3ee5ae6da3097310fafd9e6fe5e38975e66df.css?body=1" for 108.46.169.188 at 2016-02-06 16:35:41 +0000
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 108.46.169.188 at 2016-02-06 16:35:41 +0000
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 108.46.169.188 at 2016-02-06 16:35:41 +0000
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 108.46.169.188 at 2016-02-06 16:35:41 +0000
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for 108.46.169.188 at 2016-02-06 16:35:42 +0000
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 108.46.169.188 at 2016-02-06 16:35:42 +0000
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 108.46.169.188 at 2016-02-06 16:35:42 +0000
+
+
+Started GET "/assets/wikis.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 108.46.169.188 at 2016-02-06 16:35:42 +0000
+  [1m[36m (17.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (10.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20160116055801)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (30.5ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160116055801"]]
+  [1m[36m (15.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateWikis (20160129184537)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160129184537"]]
+  [1m[35m (14.0ms)[0m  commit transaction
+Migrating to AddRoleToUsers (20160205174329)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "users" ADD "role" integer DEFAULT 0
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160205174329"]]
+  [1m[35m (10.3ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wikis_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wikis_on_user_id' AND type='index'
+
+
+
+Started GET "/users/sign_up" for 108.46.169.188 at 2016-02-06 16:39:48 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (8.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/registrations/new.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 177ms (Views: 150.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/wikis/" for 108.46.169.188 at 2016-02-06 16:40:45 +0000
+Processing by WikisController#index as HTML
+  [1m[35mWiki Load (0.6ms)[0m  SELECT "wikis".* FROM "wikis"
+  Rendered wikis/index.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 123ms (Views: 111.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/wikis/" for 108.46.169.188 at 2016-02-06 16:40:47 +0000
+Processing by WikisController#index as HTML
+  [1m[36mWiki Load (0.9ms)[0m  [1mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 196ms (Views: 192.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/wikis/" for 108.46.169.188 at 2016-02-06 16:40:47 +0000
+Processing by WikisController#index as HTML
+  [1m[35mWiki Load (0.3ms)[0m  SELECT "wikis".* FROM "wikis"
+  Rendered wikis/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 95ms (Views: 93.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wikis/" for 108.46.169.188 at 2016-02-06 16:40:47 +0000
+Processing by WikisController#index as HTML
+  [1m[36mWiki Load (0.3ms)[0m  [1mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 70ms (Views: 67.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wikis/" for 108.46.169.188 at 2016-02-06 16:40:48 +0000
+Processing by WikisController#index as HTML
+  [1m[35mWiki Load (0.3ms)[0m  SELECT "wikis".* FROM "wikis"
+  Rendered wikis/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 91ms (Views: 89.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wikis/" for 108.46.169.188 at 2016-02-06 16:40:48 +0000
+Processing by WikisController#index as HTML
+  [1m[36mWiki Load (0.4ms)[0m  [1mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 84ms (Views: 81.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/wikis/" for 108.46.169.188 at 2016-02-06 16:40:48 +0000
+Processing by WikisController#index as HTML
+  [1m[35mWiki Load (0.3ms)[0m  SELECT "wikis".* FROM "wikis"
+  Rendered wikis/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 127ms (Views: 124.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_up" for 108.46.169.188 at 2016-02-06 16:41:22 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (14.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/registrations/new.html.erb within layouts/application (958.3ms)
+Completed 200 OK in 1551ms (Views: 1473.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users" for 108.46.169.188 at 2016-02-06 16:41:30 +0000
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RUBGTdR73PXjcTBaaCd4Mn3Vddms5bSp7nglmAj1ZYCL0h/mMA4LnVfBTRnwK0/Km36FiSQHZcWKn3LhJYnLcQ==", "user"=>{"email"=>"richardrpanzer@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'richardrpanzer@gmail.com' LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["confirmation_token", "64be9134c2330a0bb8645b8dc3e06270facdcf400324b4d97a634a28fa6eef98"]]
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "richardrpanzer@gmail.com"], ["encrypted_password", "$2a$10$6BzFcV1PfpEvxJHZ5JQCvuVBYZmHDi39jeQMlCOOfnvxjyeYNUbLi"], ["created_at", "2016-02-06 16:41:31.180413"], ["updated_at", "2016-02-06 16:41:31.180413"], ["confirmation_token", "er8_qHyf4Fj_GXfrFRoT"], ["confirmation_sent_at", "2016-02-06 16:41:31.477515"]]
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/mailer/confirmation_instructions.html.erb (8.0ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 519.5ms
+
+Sent mail to richardrpanzer@gmail.com (903.0ms)
+Date: Sat, 06 Feb 2016 16:41:32 +0000
+From: oceansource@gmail.com
+Reply-To: oceansource@gmail.com
+To: richardrpanzer@gmail.com
+Message-ID: <56b6223c1302c_14cc3fd92ebd21349538f@oceansource-blocipedia-2411923.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome richardrpanzer@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=er8_qHyf4Fj_GXfrFRoT">Confirm my account</a></p>
+
+  [1m[35m (10.5ms)[0m  commit transaction
+Redirected to https://blocipedia-oceansource.c9users.io/
+Completed 302 Found in 1999ms (ActiveRecord: 12.5ms)
+
+
+Started GET "/" for 108.46.169.188 at 2016-02-06 16:41:33 +0000
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 77ms (Views: 76.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 108.46.169.188 at 2016-02-06 16:42:07 +0000
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 135ms (Views: 133.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 108.46.169.188 at 2016-02-06 16:42:08 +0000
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 68ms (Views: 67.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 108.46.169.188 at 2016-02-06 16:42:28 +0000
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 156ms (Views: 155.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=er8_qHyf4Fj_GXfrFRoT&" for 108.46.169.188 at 2016-02-06 16:42:40 +0000
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"er8_qHyf4Fj_GXfrFRoT"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["confirmation_token", "er8_qHyf4Fj_GXfrFRoT"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "users" SET "confirmed_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["confirmed_at", "2016-02-06 16:42:40.695158"], ["updated_at", "2016-02-06 16:42:40.697085"], ["id", 1]]
+  [1m[35m (11.1ms)[0m  commit transaction
+Redirected to https://blocipedia-oceansource.c9users.io/users/sign_in
+Completed 302 Found in 146ms (ActiveRecord: 12.4ms)
+
+
+Started GET "/users/sign_in" for 108.46.169.188 at 2016-02-06 16:42:40 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (14.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/sessions/new.html.erb within layouts/application (59.7ms)
+Completed 200 OK in 183ms (Views: 180.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 108.46.169.188 at 2016-02-06 16:42:47 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/OwylK65MvhyjZsJqqBajIG037vOO6pI+4CIsDJBY24yfms/SszlkMY95koyrG10Zx8v60bZeySfZ9/JHz3Nnw==", "user"=>{"email"=>"richardrpanzer@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "richardrpanzer@gmail.com"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2016-02-06 16:42:47.482687"], ["current_sign_in_at", "2016-02-06 16:42:47.482687"], ["last_sign_in_ip", "108.46.169.188"], ["current_sign_in_ip", "108.46.169.188"], ["sign_in_count", 1], ["updated_at", "2016-02-06 16:42:47.484827"], ["id", 1]]
+  [1m[35m (13.0ms)[0m  commit transaction
+Redirected to https://blocipedia-oceansource.c9users.io/
+Completed 302 Found in 110ms (ActiveRecord: 14.3ms)
+
+
+Started GET "/" for 108.46.169.188 at 2016-02-06 16:42:47 +0000
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 84ms (Views: 82.5ms | ActiveRecord: 0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "users" SET "role" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["role", 2], ["updated_at", "2016-02-06 16:43:37.632040"], ["id", 1]]
+  [1m[35m (19.1ms)[0m  commit transaction
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
