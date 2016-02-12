@@ -9512,3 +9512,1158 @@ Completed 200 OK in 84ms (Views: 82.5ms | ActiveRecord: 0.5ms)
   [1m[36mSQL (1.0ms)[0m  [1mUPDATE "users" SET "role" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["role", 2], ["updated_at", "2016-02-06 16:43:37.632040"], ["id", 1]]
   [1m[35m (19.1ms)[0m  commit transaction
   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36m (17.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" integer DEFAULT 0) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (28.8ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (13.6ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (12.5ms)[0m  CREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (16.5ms)[0m  [1mCREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")[0m
+  [1m[35m (16.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (10.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (10.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160205174329')[0m
+  [1m[35m (9.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160116055801')
+  [1m[36m (10.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160129184537')[0m
+  [1m[35m (10.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" integer DEFAULT 0) 
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (6.8ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (11.8ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (9.3ms)[0m  [1mCREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (10.2ms)[0m  CREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")
+  [1m[36m (7.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (7.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (9.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160205174329')
+  [1m[36m (8.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160116055801')[0m
+  [1m[35m (8.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160129184537')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (20.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" integer DEFAULT 0) [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (11.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.4ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (10.9ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (12.9ms)[0m  CREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (13.9ms)[0m  [1mCREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")[0m
+  [1m[35m (13.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (12.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (11.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160205174329')[0m
+  [1m[35m (10.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160116055801')
+  [1m[36m (10.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160129184537')[0m
+  [1m[35m (12.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" integer DEFAULT 0) 
+  [1m[36m (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (14.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (12.8ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (10.8ms)[0m  [1mCREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (13.3ms)[0m  CREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")
+  [1m[36m (10.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (10.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (10.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160205174329')
+  [1m[36m (9.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160116055801')[0m
+  [1m[35m (11.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160129184537')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (35.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" integer DEFAULT 0) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (18.0ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (12.7ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (16.5ms)[0m  CREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (15.7ms)[0m  [1mCREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")[0m
+  [1m[35m (10.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (10.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (9.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160205174329')[0m
+  [1m[35m (13.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160116055801')
+  [1m[36m (11.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160129184537')[0m
+  [1m[35m (8.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" integer DEFAULT 0) 
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (13.5ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (10.8ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (10.9ms)[0m  [1mCREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (10.0ms)[0m  CREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")
+  [1m[36m (10.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (10.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (7.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160205174329')
+  [1m[36m (6.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160116055801')[0m
+  [1m[35m (9.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160129184537')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (12.6ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" integer DEFAULT 0) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (11.6ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (12.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (10.8ms)[0m  CREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (10.2ms)[0m  [1mCREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")[0m
+  [1m[35m (12.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (11.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.6ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (10.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160205174329')[0m
+  [1m[35m (7.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160116055801')
+  [1m[36m (7.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160129184537')[0m
+  [1m[35m (12.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" integer DEFAULT 0) 
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (9.7ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (9.7ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (13.5ms)[0m  [1mCREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (10.8ms)[0m  CREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")
+  [1m[36m (9.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (9.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (8.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160205174329')
+  [1m[36m (7.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160116055801')[0m
+  [1m[35m (9.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160129184537')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (10.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" integer DEFAULT 0) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (9.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (10.5ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (9.7ms)[0m  CREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (11.2ms)[0m  [1mCREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")[0m
+  [1m[35m (8.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (9.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (7.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160205174329')[0m
+  [1m[35m (7.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160116055801')
+  [1m[36m (9.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160129184537')[0m
+  [1m[35m (11.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" integer DEFAULT 0) 
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (13.4ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (13.4ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (9.6ms)[0m  [1mCREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (9.8ms)[0m  CREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")
+  [1m[36m (9.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (7.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (8.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160205174329')
+  [1m[36m (9.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160116055801')[0m
+  [1m[35m (9.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160129184537')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'donny.prosacco@ruelvon.net' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "donny.prosacco@ruelvon.net"], ["encrypted_password", "$2a$10$JozovWrSZV/RuIt9OXhAbOxygeBY3mmsJnxAzzyVnrCK.S6xbRSLC"], ["confirmed_at", "2016-02-12 22:57:42.221222"], ["created_at", "2016-02-12 22:57:42.257477"], ["updated_at", "2016-02-12 22:57:42.257477"]]
+  [1m[36m (9.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'jenifer@krajcik.co' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "jenifer@krajcik.co"], ["encrypted_password", "$2a$10$3ZXsSEIBgbmWq2KaN5lPJer2SjazjaJzcrg6jXBQekPhrQYcQ9dTC"], ["confirmed_at", "2016-02-12 22:57:42.357391"], ["created_at", "2016-02-12 22:57:42.360116"], ["updated_at", "2016-02-12 22:57:42.360116"]]
+  [1m[36m (13.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ulices@will.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "ulices@will.com"], ["encrypted_password", "$2a$10$ftfAb4JTu73y3tSUcUwG1ed9xeNo3VxWkkoBikuXYL/qJmnCzD6mO"], ["confirmed_at", "2016-02-12 22:57:42.465601"], ["created_at", "2016-02-12 22:57:42.468634"], ["updated_at", "2016-02-12 22:57:42.468634"]]
+  [1m[36m (11.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'reece@thielheel.info' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "reece@thielheel.info"], ["encrypted_password", "$2a$10$FjJjbRgRQYLm/keYiFimVOkK8zwrKXkS3sP0ph6yVz3SP5.Khga02"], ["confirmed_at", "2016-02-12 22:57:42.560530"], ["created_at", "2016-02-12 22:57:42.563856"], ["updated_at", "2016-02-12 22:57:42.563856"]]
+  [1m[36m (12.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'katelin_conroy@jakubowskilegros.co' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "katelin_conroy@jakubowskilegros.co"], ["encrypted_password", "$2a$10$1AJLfvH/hTY4K8sMRjz7Nuff3e3hFOwX712xP3he5ZxU.BfR8f/Jq"], ["confirmed_at", "2016-02-12 22:57:42.651018"], ["created_at", "2016-02-12 22:57:42.653286"], ["updated_at", "2016-02-12 22:57:42.653286"]]
+  [1m[36m (10.5ms)[0m  [1mcommit transaction[0m
+  [1m[36m (13.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" integer DEFAULT 0) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (9.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (9.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (7.6ms)[0m  CREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (9.6ms)[0m  [1mCREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")[0m
+  [1m[35m (10.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (10.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (9.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160205174329')[0m
+  [1m[35m (7.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160116055801')
+  [1m[36m (8.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160129184537')[0m
+  [1m[35m (11.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" integer DEFAULT 0) 
+  [1m[36m (0.3ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (9.7ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (10.7ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (12.0ms)[0m  [1mCREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (11.4ms)[0m  CREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")
+  [1m[36m (14.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (10.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (19.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160205174329')
+  [1m[36m (9.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160116055801')[0m
+  [1m[35m (8.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160129184537')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'jacques@ullrichzieme.io' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "jacques@ullrichzieme.io"], ["encrypted_password", "$2a$10$kcSMIYyoOKYLdxPHjCC4u.etF3nUD5ROp07kcckZujli3adnSWCTu"], ["confirmed_at", "2016-02-12 22:58:13.085733"], ["created_at", "2016-02-12 22:58:13.118038"], ["updated_at", "2016-02-12 22:58:13.118038"]]
+  [1m[36m (16.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'gene.cummerata@altenwerth.net' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "gene.cummerata@altenwerth.net"], ["encrypted_password", "$2a$10$kwMND0W2yxZGzLwwXSdbPe/MstVfPvRnnx99OsbPcM9r7CuC45I2K"], ["confirmed_at", "2016-02-12 22:58:13.219393"], ["created_at", "2016-02-12 22:58:13.222111"], ["updated_at", "2016-02-12 22:58:13.222111"]]
+  [1m[36m (13.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kale@moen.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "kale@moen.com"], ["encrypted_password", "$2a$10$e3nv8drngb.0u2JH85pZ6.0zFz405j7sAf7v/4NRPCYrSpx/Bfdse"], ["confirmed_at", "2016-02-12 22:58:13.319066"], ["created_at", "2016-02-12 22:58:13.321776"], ["updated_at", "2016-02-12 22:58:13.321776"]]
+  [1m[36m (16.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'bobby.senger@williamsonschneider.biz' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "bobby.senger@williamsonschneider.biz"], ["encrypted_password", "$2a$10$HsGchJ8VtXHuRxK9ZWHmeuSjTH.zPjCYeHqhVEYv7Wea7lePLeYeq"], ["confirmed_at", "2016-02-12 22:58:13.412124"], ["created_at", "2016-02-12 22:58:13.415753"], ["updated_at", "2016-02-12 22:58:13.415753"]]
+  [1m[36m (14.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'moie.towne@beahanbrown.co' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "moie.towne@beahanbrown.co"], ["encrypted_password", "$2a$10$ekUhkjUGxpagid5HhyVw0uc1H.SrWs0RIK4CUIyNtMs/6ZUdiqpNC"], ["confirmed_at", "2016-02-12 22:58:13.509297"], ["created_at", "2016-02-12 22:58:13.512261"], ["updated_at", "2016-02-12 22:58:13.512261"]]
+  [1m[36m (17.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'oceansource@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "oceansource@gmail.com"], ["encrypted_password", "$2a$10$poaZiFNqyLYsFLN4b3mhNest0ZVV2ANYs.ZKYZw6ZYHIW.VBoG2ym"], ["confirmed_at", "2016-02-12 22:58:13.608037"], ["created_at", "2016-02-12 22:58:13.610853"], ["updated_at", "2016-02-12 22:58:13.610853"]]
+  [1m[36m (12.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Vero non atque nobis."], ["body", "Consequatur officiis laborum et reiciendis aut. Eos molestias sit et perferendis maiores id. Voluptatem et et."], ["created_at", "2016-02-12 22:58:13.672397"], ["updated_at", "2016-02-12 22:58:13.672397"]]
+  [1m[36m (14.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["title", "Inventore ea natus non delectus omnis."], ["body", "Laudantium et deleniti. Repellendus doloremque consequatur sint asperiores. Quidem praesentium beatae eos rerum."], ["created_at", "2016-02-12 22:58:13.691734"], ["updated_at", "2016-02-12 22:58:13.691734"]]
+  [1m[35m (12.0ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Aspernatur dolorem et quia cupiditate atque officia maiores quaerat."], ["body", "Ducimus est odit rem est aliquam. Aut sit praesentium ducimus explicabo ipsam aut. Sed odit doloremque. Facere alias eveniet enim."], ["created_at", "2016-02-12 22:58:13.708413"], ["updated_at", "2016-02-12 22:58:13.708413"]]
+  [1m[36m (9.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (6.6ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["title", "Officiis magnam veniam natus consequatur enim nobis sit."], ["body", "Libero iste sit quia sint id aspernatur expedita. Quo commodi ut non quas occaecati atque amet. Aut voluptatem quibusdam architecto nihil iste."], ["created_at", "2016-02-12 22:58:13.727535"], ["updated_at", "2016-02-12 22:58:13.727535"]]
+  [1m[35m (9.8ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 6], ["title", "Libero aspernatur magni culpa et deleniti impedit."], ["body", "Sed necessitatibus quidem consectetur tempora error harum eius. Mollitia exercitationem quia dolor atque molestiae aperiam nulla. Voluptatibus fugit rerum sed optio."], ["created_at", "2016-02-12 22:58:13.750608"], ["updated_at", "2016-02-12 22:58:13.750608"]]
+  [1m[36m (12.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.6ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Voluptatum aut officia et doloremque cupiditate temporibus."], ["body", "In odio velit animi possimus. Porro officiis modi. Ullam perspiciatis similique tempore asperiores quia. Et laborum voluptate aliquid sequi. Ut neque iusto a eum velit."], ["created_at", "2016-02-12 22:58:13.772278"], ["updated_at", "2016-02-12 22:58:13.772278"]]
+  [1m[35m (16.3ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 6], ["title", "Voluptatibus quis placeat minus perspiciatis eius aut tempora labore."], ["body", "Est ut suscipit possimus perspiciatis. Tempora incidunt unde dolores eos placeat animi voluptates. Libero sequi sunt similique illum. Modi quis minus. Blanditiis ullam dolor in."], ["created_at", "2016-02-12 22:58:13.796633"], ["updated_at", "2016-02-12 22:58:13.796633"]]
+  [1m[36m (9.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["title", "Qui inventore accusantium totam."], ["body", "Ex explicabo est esse officiis beatae nam. Facere provident qui quos quia. Blanditiis inventore sit voluptatem quod mollitia quis id."], ["created_at", "2016-02-12 22:58:13.810627"], ["updated_at", "2016-02-12 22:58:13.810627"]]
+  [1m[35m (18.4ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 3], ["title", "Quis odio ut distinctio est provident ab eius dolorem."], ["body", "Aut consequatur eaque dolores minima similique. Odio possimus ex sint consequuntur temporibus explicabo et. Voluptates unde mollitia est. Unde est enim et tempore dolor."], ["created_at", "2016-02-12 22:58:13.833451"], ["updated_at", "2016-02-12 22:58:13.833451"]]
+  [1m[36m (9.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["title", "Harum sapiente quaerat tempora."], ["body", "Molestias corporis sit. Ipsum error aut eum cupiditate. Vel reprehenderit non quia quis consequatur accusamus odio. Rerum molestias eveniet recusandae ipsum ea."], ["created_at", "2016-02-12 22:58:13.847317"], ["updated_at", "2016-02-12 22:58:13.847317"]]
+  [1m[35m (11.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 5], ["title", "Esse in quaerat et est maiores consequatur."], ["body", "Doloribus dolorum quis magni aliquid recusandae. Molestias dignissimos et neque provident minima nulla repellat. Sit repudiandae libero et quia in vero."], ["created_at", "2016-02-12 22:58:13.863431"], ["updated_at", "2016-02-12 22:58:13.863431"]]
+  [1m[36m (11.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["title", "Sapiente odio qui quis dolor ut rem error."], ["body", "Est expedita nisi quisquam quae. Animi nesciunt debitis unde odit. Sapiente sint ut maxime fugit nesciunt nihil."], ["created_at", "2016-02-12 22:58:13.880050"], ["updated_at", "2016-02-12 22:58:13.880050"]]
+  [1m[35m (7.3ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 3], ["title", "Asperiores omnis velit officiis voluptatem reiciendis et."], ["body", "Repellat ut laborum in similique pariatur ipsam sapiente. Odit et consectetur fuga praesentium ea. Consequatur exercitationem dolorem ex libero deserunt quia. Animi dolores ducimus quidem odio facere nesciunt quasi."], ["created_at", "2016-02-12 22:58:13.892486"], ["updated_at", "2016-02-12 22:58:13.892486"]]
+  [1m[36m (10.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Maiores est iusto qui sunt debitis quam unde."], ["body", "Placeat et ipsam nulla qui est praesentium. Eum amet sapiente est hic iure vitae. Odit et officia sit aut eligendi quasi esse."], ["created_at", "2016-02-12 22:58:13.908398"], ["updated_at", "2016-02-12 22:58:13.908398"]]
+  [1m[35m (10.4ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 6], ["title", "Quam qui et cupiditate distinctio animi sint."], ["body", "Et deleniti quidem esse ipsa nihil. Sint sequi voluptatem id fugit dolor ad. Numquam vero nisi mollitia. Asperiores rem et quis optio magni. Vitae ut autem maiores."], ["created_at", "2016-02-12 22:58:13.929717"], ["updated_at", "2016-02-12 22:58:13.929717"]]
+  [1m[36m (9.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["title", "Ratione fugit ducimus quo minus et quae."], ["body", "Commodi explicabo tempore. Et nostrum qui molestiae at in. Omnis iure explicabo rerum ea delectus consequatur et. Iure fuga et veniam perspiciatis accusantium nisi consequuntur."], ["created_at", "2016-02-12 22:58:13.943616"], ["updated_at", "2016-02-12 22:58:13.943616"]]
+  [1m[35m (9.3ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.7ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Voluptas a odit consequatur fuga."], ["body", "Minus dolorum aliquam. Molestiae a consectetur non est. Autem rerum voluptas. Dolorem consectetur quod quia rem quo labore. Sit modi voluptate laborum ipsa."], ["created_at", "2016-02-12 22:58:13.957377"], ["updated_at", "2016-02-12 22:58:13.957377"]]
+  [1m[36m (9.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["title", "Doloribus et maiores ipsa quae id qui ab totam."], ["body", "Et at reprehenderit voluptate illum eos delectus. Aliquam deserunt aut dolorem sit soluta mollitia. Modi eligendi sed."], ["created_at", "2016-02-12 22:58:13.975554"], ["updated_at", "2016-02-12 22:58:13.975554"]]
+  [1m[35m (15.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 4], ["title", "Velit totam reiciendis doloremque dolor sit quo."], ["body", "Quas reprehenderit in officiis mollitia fugit. Quod perspiciatis optio facilis. Et repellendus voluptatibus debitis quam. Est rerum quaerat libero perspiciatis pariatur modi doloremque."], ["created_at", "2016-02-12 22:58:13.997728"], ["updated_at", "2016-02-12 22:58:13.997728"]]
+  [1m[36m (15.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["title", "Rerum a voluptatem soluta consectetur sint quaerat."], ["body", "Aut reprehenderit itaque. Qui et accusamus maxime atque inventore voluptas voluptatibus. Numquam assumenda voluptate ut aspernatur at. Vel minus repudiandae quibusdam ea. Eos aut voluptate laborum consectetur est dolores eius."], ["created_at", "2016-02-12 22:58:14.017568"], ["updated_at", "2016-02-12 22:58:14.017568"]]
+  [1m[35m (10.1ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 6], ["title", "Omnis reprehenderit earum sed tempore."], ["body", "Est illo ducimus odit ut earum. Dolor modi sit nesciunt non culpa sed tenetur. Animi tempore est. Id quis odio cum possimus eveniet ut. Officiis fugiat adipisci sit fugit nam quis aut."], ["created_at", "2016-02-12 22:58:14.033973"], ["updated_at", "2016-02-12 22:58:14.033973"]]
+  [1m[36m (10.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["title", "Adipisci ratione est rem omnis rerum deserunt."], ["body", "Blanditiis nihil et quidem quo cum molestiae delectus. Et et doloribus est aut. Libero expedita illo hic id et. Dignissimos quis neque aut earum dolorem voluptates laboriosam."], ["created_at", "2016-02-12 22:58:14.049999"], ["updated_at", "2016-02-12 22:58:14.049999"]]
+  [1m[35m (11.8ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 3], ["title", "Necessitatibus voluptate velit quis accusamus tenetur eos."], ["body", "Eaque alias quia saepe voluptatum cupiditate. Est qui sint blanditiis voluptates qui. Maxime eos odio unde ut. Quae enim et porro. Expedita minus iusto voluptatum."], ["created_at", "2016-02-12 22:58:14.066859"], ["updated_at", "2016-02-12 22:58:14.066859"]]
+  [1m[36m (12.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["title", "Sed molestiae id perferendis aut."], ["body", "Alias debitis quod accusantium non impedit eveniet. Atque quia consequatur. Nostrum ut adipisci quae rerum dolorum. Voluptas dolore quisquam. Quidem molestias ut facere."], ["created_at", "2016-02-12 22:58:14.084342"], ["updated_at", "2016-02-12 22:58:14.084342"]]
+  [1m[35m (10.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 4], ["title", "Esse dolor officia error tenetur iure."], ["body", "Qui possimus aut qui. Vel aut exercitationem. Rerum perferendis recusandae cumque voluptas unde officia. Nobis et aliquam aut error reprehenderit."], ["created_at", "2016-02-12 22:58:14.100282"], ["updated_at", "2016-02-12 22:58:14.100282"]]
+  [1m[36m (17.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Eius dolorem quo assumenda voluptatibus totam possimus."], ["body", "Ea magni voluptatem. Omnis at placeat. Animi ea consequatur aliquid soluta non."], ["created_at", "2016-02-12 22:58:14.124868"], ["updated_at", "2016-02-12 22:58:14.124868"]]
+  [1m[35m (11.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Ut repellendus fugiat consequatur dicta sed."], ["body", "Voluptas non voluptatem voluptatum rerum. Nam tempora minus suscipit voluptate sunt. Enim sit dolorem repudiandae occaecati. Odio rerum magni tempore aperiam nesciunt qui sequi. Tenetur architecto atque ex quidem."], ["created_at", "2016-02-12 22:58:14.140708"], ["updated_at", "2016-02-12 22:58:14.140708"]]
+  [1m[36m (16.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (4.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["title", "In debitis vitae error corrupti minus quasi."], ["body", "Et tempora dolore quo repellat sequi. Dolor dolore iste consequatur excepturi esse provident hic. Sequi harum id alias minima aut."], ["created_at", "2016-02-12 22:58:14.161112"], ["updated_at", "2016-02-12 22:58:14.161112"]]
+  [1m[35m (9.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 6], ["title", "Tenetur dolore quas animi aut velit culpa."], ["body", "Molestias ducimus animi ut. Sit soluta voluptatem. Tenetur voluptates eos molestias enim."], ["created_at", "2016-02-12 22:58:14.178849"], ["updated_at", "2016-02-12 22:58:14.178849"]]
+  [1m[36m (10.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["title", "Porro qui iusto sapiente enim reprehenderit impedit voluptate."], ["body", "Eius deserunt tempore quidem sapiente voluptas. Nostrum aliquam eligendi. Quo dolor esse praesentium recusandae numquam error amet. Enim odit aut est."], ["created_at", "2016-02-12 22:58:14.193361"], ["updated_at", "2016-02-12 22:58:14.193361"]]
+  [1m[35m (11.0ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 3], ["title", "Veniam quia tempora sed quis debitis nihil sit."], ["body", "Minus alias a nesciunt. Itaque molestiae qui est necessitatibus sit optio. Illum autem dolor id mollitia. Porro temporibus voluptatum."], ["created_at", "2016-02-12 22:58:14.210359"], ["updated_at", "2016-02-12 22:58:14.210359"]]
+  [1m[36m (26.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["title", "Blanditiis accusantium eius optio non enim facilis tempore."], ["body", "Atque illum vero. Assumenda quia dolorum sed. Ut enim nostrum eum consequatur. Dolor rerum recusandae. Quos fugit in sed qui esse."], ["created_at", "2016-02-12 22:58:14.240993"], ["updated_at", "2016-02-12 22:58:14.240993"]]
+  [1m[35m (19.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 4], ["title", "Nostrum aperiam velit dolorum consequatur ut qui."], ["body", "Et quasi dolore est culpa natus. In tenetur ex qui et atque. Id sequi repudiandae. Maxime fuga ea omnis odit nostrum voluptates rerum."], ["created_at", "2016-02-12 22:58:14.265396"], ["updated_at", "2016-02-12 22:58:14.265396"]]
+  [1m[36m (22.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["title", "Rem nemo necessitatibus rerum excepturi sunt et reprehenderit incidunt."], ["body", "Praesentium fugiat iusto perspiciatis ullam assumenda quia. Officiis et hic quas. Repellat qui temporibus voluptatum. Aut tempore vitae et itaque dolore dolores."], ["created_at", "2016-02-12 22:58:14.293028"], ["updated_at", "2016-02-12 22:58:14.293028"]]
+  [1m[35m (15.8ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 6], ["title", "Facere laudantium provident molestias suscipit nulla dolorem omnis."], ["body", "Quod consequatur doloribus adipisci. Dicta ut quas necessitatibus nostrum eveniet. Sit vel sit eos voluptate et. Alias aspernatur accusantium doloremque unde impedit ipsum exercitationem."], ["created_at", "2016-02-12 22:58:14.313579"], ["updated_at", "2016-02-12 22:58:14.313579"]]
+  [1m[36m (11.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["title", "Vitae at in excepturi ut optio totam."], ["body", "Similique ratione quas quis tempora. Aspernatur repellendus rerum quas sint tenetur maiores. Dolore rerum minima adipisci et officia excepturi."], ["created_at", "2016-02-12 22:58:14.329212"], ["updated_at", "2016-02-12 22:58:14.329212"]]
+  [1m[35m (10.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Esse ipsam occaecati odio quo optio pariatur dolorem."], ["body", "Saepe necessitatibus totam molestiae. Laboriosam consectetur voluptatibus est ullam. Quia odit vitae. Qui eveniet velit at pariatur sequi corrupti qui."], ["created_at", "2016-02-12 22:58:14.343206"], ["updated_at", "2016-02-12 22:58:14.343206"]]
+  [1m[36m (9.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["title", "Autem iste dolores tempore libero ipsam sit voluptatem."], ["body", "Qui vel qui dolorem ut asperiores. Quod in similique occaecati iste magnam inventore delectus. Vero sequi est. Et voluptatum quis sunt."], ["created_at", "2016-02-12 22:58:14.357360"], ["updated_at", "2016-02-12 22:58:14.357360"]]
+  [1m[35m (9.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Fugit quaerat quo temporibus deserunt fugiat tempora quo."], ["body", "Iusto commodi deserunt dolores. Ut sequi aut et ea. Ullam est aliquid recusandae fuga reprehenderit impedit."], ["created_at", "2016-02-12 22:58:14.372203"], ["updated_at", "2016-02-12 22:58:14.372203"]]
+  [1m[36m (11.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["title", "Et laudantium neque officia deleniti id atque eum eius."], ["body", "Ut reiciendis magni eum nostrum officia magnam odio. Labore autem culpa qui aut animi hic. Porro molestiae delectus itaque iusto illum."], ["created_at", "2016-02-12 22:58:14.388503"], ["updated_at", "2016-02-12 22:58:14.388503"]]
+  [1m[35m (10.4ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 6], ["title", "Sint quisquam nostrum aut earum."], ["body", "Veniam quo ut. Dignissimos facilis vero corrupti fugiat impedit dicta ut. Voluptatem eligendi sequi eius est ipsum."], ["created_at", "2016-02-12 22:58:14.404921"], ["updated_at", "2016-02-12 22:58:14.404921"]]
+  [1m[36m (9.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["title", "Assumenda et totam vel."], ["body", "A qui ut esse eveniet quisquam omnis quas. Voluptatibus itaque magnam consequatur. Aut et voluptas voluptas adipisci."], ["created_at", "2016-02-12 22:58:14.419825"], ["updated_at", "2016-02-12 22:58:14.419825"]]
+  [1m[35m (9.3ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 6], ["title", "Explicabo itaque iste possimus debitis et saepe."], ["body", "Sit accusamus voluptatem. Deleniti aliquam et repudiandae. Assumenda quas nihil veritatis modi. Illum aut eum suscipit."], ["created_at", "2016-02-12 22:58:14.445958"], ["updated_at", "2016-02-12 22:58:14.445958"]]
+  [1m[36m (12.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Corporis minus quis quibusdam earum reprehenderit dolor quis odio."], ["body", "Voluptatem perferendis soluta. Necessitatibus molestiae similique. Illum eaque optio earum a nihil laborum. Maxime itaque incidunt. Velit et ducimus commodi aliquid vel nulla pariatur."], ["created_at", "2016-02-12 22:58:14.463501"], ["updated_at", "2016-02-12 22:58:14.463501"]]
+  [1m[35m (9.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 5], ["title", "Cumque quia atque facilis itaque."], ["body", "Ad officiis voluptatem necessitatibus quia ex. Rerum debitis quam facere laudantium nisi fuga repellat. Quia consectetur quas quae dignissimos. Placeat vero eum qui esse debitis facere."], ["created_at", "2016-02-12 22:58:14.477274"], ["updated_at", "2016-02-12 22:58:14.477274"]]
+  [1m[36m (7.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["title", "Nisi voluptate omnis et nihil distinctio nesciunt vel fugit."], ["body", "Quod sint qui quae magni eos in. Perferendis quis ea qui ut minus autem. Quisquam dolorem sed atque enim aut deserunt quis. Aut facere deserunt."], ["created_at", "2016-02-12 22:58:14.488423"], ["updated_at", "2016-02-12 22:58:14.488423"]]
+  [1m[35m (10.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 6], ["title", "Optio et magnam et laborum."], ["body", "Consequatur possimus quia qui dolorem aut. Aut rerum asperiores. Dignissimos sunt magnam a exercitationem tempore. Suscipit quia et est rem ad vero. Itaque voluptatem inventore iste."], ["created_at", "2016-02-12 22:58:14.503008"], ["updated_at", "2016-02-12 22:58:14.503008"]]
+  [1m[36m (9.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["title", "Error exercitationem ut ut."], ["body", "Adipisci similique aut. Quo recusandae mollitia. Mollitia molestias ipsa et aut."], ["created_at", "2016-02-12 22:58:14.516652"], ["updated_at", "2016-02-12 22:58:14.516652"]]
+  [1m[35m (10.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Voluptatibus quis et perspiciatis occaecati dolores."], ["body", "Beatae iure et laudantium. Officia dolores dicta id quo vitae. Tenetur ipsam rerum similique. Corrupti et voluptates ducimus deleniti repellendus impedit. Voluptatem perspiciatis repellat soluta."], ["created_at", "2016-02-12 22:58:14.532131"], ["updated_at", "2016-02-12 22:58:14.532131"]]
+  [1m[36m (9.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["title", "Nihil totam distinctio hic possimus et molestias qui harum."], ["body", "Eveniet voluptatem consectetur suscipit voluptatem nihil vero. Consequuntur qui ut magnam quo ut vel maiores. Sint ipsa aperiam fugit quo laudantium ut dolores."], ["created_at", "2016-02-12 22:58:14.545585"], ["updated_at", "2016-02-12 22:58:14.545585"]]
+  [1m[35m (7.4ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "wikis"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36m (11.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" integer DEFAULT 0) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (9.8ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (13.7ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (9.3ms)[0m  CREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (13.7ms)[0m  [1mCREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")[0m
+  [1m[35m (14.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (9.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (1.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (9.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160205174329')[0m
+  [1m[35m (7.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160116055801')
+  [1m[36m (13.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160129184537')[0m
+  [1m[35m (13.7ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" integer DEFAULT 0) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (11.6ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (12.8ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (11.7ms)[0m  [1mCREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (9.9ms)[0m  CREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")
+  [1m[36m (7.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (9.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (7.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160205174329')
+  [1m[36m (8.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160116055801')[0m
+  [1m[35m (7.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160129184537')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'woodrow@weinathoeger.io' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "woodrow@weinathoeger.io"], ["encrypted_password", "$2a$10$IBlRqn3eDTfZZjml6W.XHeIA8SKb87R8gem8EPI3C4NM0ZS/0DVPG"], ["confirmed_at", "2016-02-12 23:01:28.313706"], ["created_at", "2016-02-12 23:01:28.350497"], ["updated_at", "2016-02-12 23:01:28.350497"]]
+  [1m[36m (15.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'easter.bernhard@lindgren.org' LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "easter.bernhard@lindgren.org"], ["encrypted_password", "$2a$10$gtKzsauo6BuAkOo9kM1VbeOwIqG62/dgIhh0hfOT0Dg5jGGmeKcPO"], ["confirmed_at", "2016-02-12 23:01:28.442121"], ["created_at", "2016-02-12 23:01:28.445608"], ["updated_at", "2016-02-12 23:01:28.445608"]]
+  [1m[36m (13.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'aidan.gleichner@douglas.net' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "aidan.gleichner@douglas.net"], ["encrypted_password", "$2a$10$qf.140IljLW9hSeCJ1XT9O4sO0eRbHopME/w5pvJ0VjZzcMLcRUsu"], ["confirmed_at", "2016-02-12 23:01:28.534653"], ["created_at", "2016-02-12 23:01:28.538237"], ["updated_at", "2016-02-12 23:01:28.538237"]]
+  [1m[36m (12.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'marilou@blick.name' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "marilou@blick.name"], ["encrypted_password", "$2a$10$T55a0GQd38O6DBTxKYcFI.j8goH.IIjWcTVXHa4RQuv7RtKpmm7ti"], ["confirmed_at", "2016-02-12 23:01:28.632926"], ["created_at", "2016-02-12 23:01:28.635126"], ["updated_at", "2016-02-12 23:01:28.635126"]]
+  [1m[36m (10.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'maximillia@johns.org' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "maximillia@johns.org"], ["encrypted_password", "$2a$10$67gmcYvNOevASBfXUwuasuc3/ITp/jWfcEaqYNt5Dedn98CfDnVWm"], ["confirmed_at", "2016-02-12 23:01:28.718314"], ["created_at", "2016-02-12 23:01:28.721116"], ["updated_at", "2016-02-12 23:01:28.721116"]]
+  [1m[36m (11.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'oceansource@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "oceansource@gmail.com"], ["encrypted_password", "$2a$10$GvRmORY011Z3yfd8KfZwS.Sa8L1.d3grGZb.xW4IUBcfWLc4/EFIG"], ["confirmed_at", "2016-02-12 23:01:28.814133"], ["created_at", "2016-02-12 23:01:28.816898"], ["updated_at", "2016-02-12 23:01:28.816898"]]
+  [1m[36m (14.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Incidunt aspernatur illo aut nihil ut cupiditate molestias autem."], ["body", "Consequuntur aut et. Qui rerum nisi ut nam inventore sapiente. Ipsum qui unde non sequi quam dolor. Dolore non dicta voluptatem."], ["created_at", "2016-02-12 23:01:28.878559"], ["updated_at", "2016-02-12 23:01:28.878559"]]
+  [1m[36m (12.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["title", "Ea facere dolore harum facilis voluptatem veniam aspernatur."], ["body", "Perferendis quae beatae. Non eveniet necessitatibus voluptas corrupti voluptatem sapiente. Est sed voluptate soluta aut. Amet aperiam dolorum nulla ex tempora. Quos delectus est voluptates."], ["created_at", "2016-02-12 23:01:28.896144"], ["updated_at", "2016-02-12 23:01:28.896144"]]
+  [1m[35m (11.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Et nesciunt dignissimos sint."], ["body", "Ea dolore vitae rerum. Natus in dolore aspernatur nulla illum deserunt voluptas. Est quisquam unde eveniet voluptate aut. Enim aut illum veritatis repellendus rerum tempora autem."], ["created_at", "2016-02-12 23:01:28.911173"], ["updated_at", "2016-02-12 23:01:28.911173"]]
+  [1m[36m (12.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["title", "Distinctio et quia sit vero perspiciatis."], ["body", "Magnam fugit provident odit adipisci ratione eligendi repellendus. Odio fuga autem consequatur voluptas modi. Officia repellat voluptas. Sequi illum et odit id enim odio. Totam ut consequatur aut."], ["created_at", "2016-02-12 23:01:28.928232"], ["updated_at", "2016-02-12 23:01:28.928232"]]
+  [1m[35m (12.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Voluptates autem at ut blanditiis voluptas ducimus."], ["body", "Labore quibusdam veniam porro ut. Excepturi et sapiente voluptate. Aut optio voluptatem et dolorem esse natus excepturi. Quos nulla sit. Ea iure ex."], ["created_at", "2016-02-12 23:01:28.944584"], ["updated_at", "2016-02-12 23:01:28.944584"]]
+  [1m[36m (8.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["title", "Placeat alias ut sit."], ["body", "Eligendi et magnam ut error velit at quis. Officiis cum ad dolores accusamus eum ipsam inventore. Sint quisquam dolor qui nesciunt. Ut et occaecati. Dolor veritatis sed."], ["created_at", "2016-02-12 23:01:28.956484"], ["updated_at", "2016-02-12 23:01:28.956484"]]
+  [1m[35m (14.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Fuga eum iusto voluptatem incidunt nemo."], ["body", "Et ipsum dolorum adipisci repudiandae et eius. Corporis ea rerum sed sit repudiandae. Porro doloremque sunt et sed sit ut. Facere in magni rerum autem deleniti et eligendi. Delectus quis consequuntur."], ["created_at", "2016-02-12 23:01:28.975410"], ["updated_at", "2016-02-12 23:01:28.975410"]]
+  [1m[36m (16.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["title", "Similique id ipsum doloremque quo voluptate quod et tenetur."], ["body", "Esse dolores suscipit. Animi in rerum non sed eaque. Facilis temporibus nesciunt esse rerum reiciendis odit."], ["created_at", "2016-02-12 23:01:28.996560"], ["updated_at", "2016-02-12 23:01:28.996560"]]
+  [1m[35m (11.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 3], ["title", "Necessitatibus et aut quos est dignissimos velit pariatur."], ["body", "Et nemo laudantium facilis. Optio voluptatem ipsam aut at. Consectetur modi fugiat autem deserunt veniam et. Eum amet nobis architecto nisi."], ["created_at", "2016-02-12 23:01:29.012921"], ["updated_at", "2016-02-12 23:01:29.012921"]]
+  [1m[36m (7.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["title", "Qui unde et blanditiis non aperiam voluptate eligendi."], ["body", "Qui et voluptas nihil magni. Qui cumque doloribus rerum. Voluptas culpa sint commodi iusto. Quibusdam illo occaecati necessitatibus qui impedit et. Alias fuga vero."], ["created_at", "2016-02-12 23:01:29.024270"], ["updated_at", "2016-02-12 23:01:29.024270"]]
+  [1m[35m (10.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Vel deleniti amet aut eaque nostrum ex et cum."], ["body", "Perferendis laboriosam at totam qui. Tenetur ab magnam ut aut culpa. Autem pariatur dignissimos suscipit tenetur. Aut ut debitis illum. Et aperiam in consequuntur."], ["created_at", "2016-02-12 23:01:29.039092"], ["updated_at", "2016-02-12 23:01:29.039092"]]
+  [1m[36m (9.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["title", "Eius sint sapiente ut reiciendis aut dolorem."], ["body", "Id magnam molestiae autem consequatur repudiandae quia quis. Asperiores quas voluptas et velit quae et. Incidunt nulla et ipsam iure voluptas. Corporis illum doloremque voluptas non cupiditate ut."], ["created_at", "2016-02-12 23:01:29.052257"], ["updated_at", "2016-02-12 23:01:29.052257"]]
+  [1m[35m (12.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 6], ["title", "Ab sed fugiat illo voluptas et in."], ["body", "Non illum rerum est voluptas dolore qui. Blanditiis provident illum dolorum. Architecto nostrum laboriosam totam voluptatibus autem suscipit non. Ut reiciendis perferendis voluptates sit quisquam officiis eos. Ullam laborum et."], ["created_at", "2016-02-12 23:01:29.068409"], ["updated_at", "2016-02-12 23:01:29.068409"]]
+  [1m[36m (12.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["title", "Omnis quam ut beatae."], ["body", "Doloremque deleniti libero reiciendis voluptas. Veniam id ea fugit qui laudantium omnis. Et consequuntur maxime voluptatibus nesciunt maiores."], ["created_at", "2016-02-12 23:01:29.084060"], ["updated_at", "2016-02-12 23:01:29.084060"]]
+  [1m[35m (9.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Fugit nesciunt repellendus quia nemo."], ["body", "Ducimus architecto quo libero est id. Non quia rem ipsam fugiat. Labore fuga in soluta omnis inventore."], ["created_at", "2016-02-12 23:01:29.096960"], ["updated_at", "2016-02-12 23:01:29.096960"]]
+  [1m[36m (7.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["title", "Adipisci doloribus officia illo harum quia cum quod."], ["body", "Tenetur nam error corporis eius voluptas. Dolorem quis ut alias quibusdam. Error rerum eum. Neque dolores unde."], ["created_at", "2016-02-12 23:01:29.108087"], ["updated_at", "2016-02-12 23:01:29.108087"]]
+  [1m[35m (11.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Pariatur vel voluptate et perferendis blanditiis."], ["body", "Perspiciatis accusamus doloribus veniam neque velit iste. Officiis voluptas perspiciatis. Quas quaerat omnis distinctio nesciunt. Dicta nemo maiores vel inventore. Aut eum repellendus fugit."], ["created_at", "2016-02-12 23:01:29.123455"], ["updated_at", "2016-02-12 23:01:29.123455"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["title", "Et nihil voluptate pariatur perspiciatis qui."], ["body", "Adipisci maiores nam. Molestias sit laborum sunt praesentium tenetur magni. Expedita quos nostrum autem. Non ut non modi."], ["created_at", "2016-02-12 23:01:29.137061"], ["updated_at", "2016-02-12 23:01:29.137061"]]
+  [1m[35m (9.8ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 3], ["title", "Nobis facere quia adipisci quo natus expedita rerum odio."], ["body", "Sapiente optio ad. Facilis impedit voluptas quia repudiandae. Necessitatibus dicta molestiae et et. Autem dolor totam tenetur unde architecto."], ["created_at", "2016-02-12 23:01:29.151381"], ["updated_at", "2016-02-12 23:01:29.151381"]]
+  [1m[36m (9.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["title", "Ratione quo ipsa autem soluta at sunt."], ["body", "Enim nostrum dolore. Ipsam velit iusto rerum ut adipisci illo similique. Autem autem itaque et explicabo sed quia sit. Reprehenderit est voluptatem fugiat. Voluptatum sint adipisci necessitatibus molestiae eligendi."], ["created_at", "2016-02-12 23:01:29.164514"], ["updated_at", "2016-02-12 23:01:29.164514"]]
+  [1m[35m (10.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 4], ["title", "Sed occaecati delectus quam quasi rerum sequi veritatis."], ["body", "Mollitia error nam velit laboriosam sit vero. Voluptates voluptatem quis placeat hic. Ut dignissimos soluta."], ["created_at", "2016-02-12 23:01:29.178413"], ["updated_at", "2016-02-12 23:01:29.178413"]]
+  [1m[36m (11.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["title", "Labore et magnam beatae."], ["body", "Eum enim nisi asperiores. Illum odio facilis animi neque soluta. Sit eum incidunt. Molestiae sapiente ut aspernatur. Et sit ipsa maiores itaque."], ["created_at", "2016-02-12 23:01:29.192737"], ["updated_at", "2016-02-12 23:01:29.192737"]]
+  [1m[35m (7.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 6], ["title", "Recusandae non ut laboriosam enim culpa reiciendis debitis."], ["body", "Distinctio aut ea eos omnis culpa. Aliquam autem velit nisi voluptatibus. Explicabo beatae incidunt. Quis at sed quidem corporis quas velit."], ["created_at", "2016-02-12 23:01:29.203837"], ["updated_at", "2016-02-12 23:01:29.203837"]]
+  [1m[36m (9.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Rerum in et expedita quia mollitia hic rem."], ["body", "Rem adipisci incidunt id libero. Nisi qui iusto in eveniet a nemo. Consequuntur enim velit nisi sint odio. Vitae odio eum incidunt nihil aut commodi placeat."], ["created_at", "2016-02-12 23:01:29.215927"], ["updated_at", "2016-02-12 23:01:29.215927"]]
+  [1m[35m (9.6ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 5], ["title", "Quae soluta omnis incidunt nemo."], ["body", "Ut omnis minus. Est possimus aut explicabo qui. Inventore qui eum voluptatem eius incidunt. Mollitia consequuntur eum facere vero fuga. Culpa deserunt dolore soluta."], ["created_at", "2016-02-12 23:01:29.229485"], ["updated_at", "2016-02-12 23:01:29.229485"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["title", "Et adipisci dignissimos fugiat quia molestias illum blanditiis sed."], ["body", "Esse quos quam. Enim consequatur ut hic deserunt culpa porro saepe. Minus praesentium rerum quibusdam quidem."], ["created_at", "2016-02-12 23:01:29.242801"], ["updated_at", "2016-02-12 23:01:29.242801"]]
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 3], ["title", "Ipsum in dolore suscipit."], ["body", "Officia itaque aspernatur dolor incidunt exercitationem. Vel natus quia explicabo ab dolorem in. Excepturi soluta itaque et cumque sit. Praesentium eius ipsa."], ["created_at", "2016-02-12 23:01:29.255296"], ["updated_at", "2016-02-12 23:01:29.255296"]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["title", "Doloribus officia repudiandae culpa consequatur et molestiae corrupti facilis."], ["body", "Autem minus voluptatibus quos. Est illum id eligendi. Voluptatem saepe aliquam officia reiciendis et deserunt."], ["created_at", "2016-02-12 23:01:29.267509"], ["updated_at", "2016-02-12 23:01:29.267509"]]
+  [1m[35m (9.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 6], ["title", "Aut velit quibusdam ex similique iure."], ["body", "Omnis dolore porro tempore et illo velit sapiente. Id est minima quidem animi veniam maiores sequi. Qui consequatur delectus est rem deleniti corporis quia."], ["created_at", "2016-02-12 23:01:29.280485"], ["updated_at", "2016-02-12 23:01:29.280485"]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Rerum eos officiis fugiat est sit dolores repellat."], ["body", "Fugiat doloribus qui quo. Repudiandae dolores magni eos voluptates. Quo nobis ullam minima maxime error odio fugit. Expedita eum et."], ["created_at", "2016-02-12 23:01:29.292608"], ["updated_at", "2016-02-12 23:01:29.292608"]]
+  [1m[35m (11.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Aspernatur harum suscipit et."], ["body", "Ut in quia unde. Quisquam sint enim corporis. Qui et nihil. Impedit alias ratione aut corrupti."], ["created_at", "2016-02-12 23:01:29.306576"], ["updated_at", "2016-02-12 23:01:29.306576"]]
+  [1m[36m (9.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["title", "Necessitatibus aspernatur eveniet corporis debitis ullam sint."], ["body", "Libero ullam quia reprehenderit quos ipsum. Quam ducimus quis placeat. Et cumque repellendus ab. Qui quis quam aut dolorem accusamus praesentium maiores. Dolor ullam commodi ut ipsum amet soluta et."], ["created_at", "2016-02-12 23:01:29.320052"], ["updated_at", "2016-02-12 23:01:29.320052"]]
+  [1m[35m (13.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 5], ["title", "Quidem eveniet reprehenderit provident aperiam."], ["body", "Aut sunt velit. Cum illum perspiciatis doloremque et. Sed nihil et dolorem sed. Nulla est voluptatem saepe."], ["created_at", "2016-02-12 23:01:29.336879"], ["updated_at", "2016-02-12 23:01:29.336879"]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["title", "Eos neque aut at est consequatur."], ["body", "Nesciunt magni repellendus. Quos nam et. Voluptatem fugit sint."], ["created_at", "2016-02-12 23:01:29.349316"], ["updated_at", "2016-02-12 23:01:29.349316"]]
+  [1m[35m (7.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 5], ["title", "Voluptas iste at atque illo sit quidem."], ["body", "Et nesciunt perspiciatis harum sequi natus expedita. Eveniet possimus deserunt rerum illo quis amet. Magnam quas voluptatum odio rerum. Sit dolores labore enim. Nisi voluptas pariatur sed alias aut."], ["created_at", "2016-02-12 23:01:29.360113"], ["updated_at", "2016-02-12 23:01:29.360113"]]
+  [1m[36m (9.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["title", "Dolores ea non sequi omnis labore."], ["body", "At voluptatem et. Deleniti rerum quod sunt est quos. Aut molestiae nihil."], ["created_at", "2016-02-12 23:01:29.373284"], ["updated_at", "2016-02-12 23:01:29.373284"]]
+  [1m[35m (7.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 6], ["title", "Sunt quam voluptate expedita cum magnam odit deserunt."], ["body", "Voluptatem rerum est at consequatur. Voluptatem voluptatibus omnis sed. Perferendis illo dolorem quidem et accusamus molestias. Eligendi omnis deleniti ducimus sunt enim. Voluptate magnam rem id voluptas."], ["created_at", "2016-02-12 23:01:29.383836"], ["updated_at", "2016-02-12 23:01:29.383836"]]
+  [1m[36m (8.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["title", "Fugiat quod quo autem facere rerum ut excepturi."], ["body", "Ut est ipsum et molestiae. Magni a cumque in voluptas. Accusamus expedita autem facilis consequatur. Voluptates facere aut. Cumque porro similique libero deleniti."], ["created_at", "2016-02-12 23:01:29.395248"], ["updated_at", "2016-02-12 23:01:29.395248"]]
+  [1m[35m (9.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Quos dolor reiciendis qui."], ["body", "Modi esse consectetur quo et qui nihil. Rem reprehenderit id. Excepturi debitis sapiente esse sint quia autem ducimus."], ["created_at", "2016-02-12 23:01:29.408420"], ["updated_at", "2016-02-12 23:01:29.408420"]]
+  [1m[36m (12.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Sit quo alias minus aperiam tenetur optio."], ["body", "Molestiae nostrum alias. Sunt doloremque mollitia voluptatem cumque. Aspernatur sint quae veritatis ullam."], ["created_at", "2016-02-12 23:01:29.424575"], ["updated_at", "2016-02-12 23:01:29.424575"]]
+  [1m[35m (8.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Ipsum velit assumenda nobis animi."], ["body", "Ipsum sunt occaecati. Cumque illum veniam id quo quisquam. Eligendi in dolore sit distinctio molestias rem voluptas. Aliquid et dolorem sed et quo quos non. Fuga debitis voluptatem qui optio."], ["created_at", "2016-02-12 23:01:29.436780"], ["updated_at", "2016-02-12 23:01:29.436780"]]
+  [1m[36m (7.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["title", "Praesentium quaerat architecto fugiat et."], ["body", "Voluptates soluta optio aliquam exercitationem non facilis velit. Provident quis nihil omnis non aspernatur qui enim. Eum et aspernatur debitis. Perspiciatis sit magni animi quos quis ut. Culpa molestiae dolorum et nesciunt itaque."], ["created_at", "2016-02-12 23:01:29.457646"], ["updated_at", "2016-02-12 23:01:29.457646"]]
+  [1m[35m (10.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Natus et libero porro."], ["body", "Soluta ea eos. Ut minus velit id suscipit rerum. Dolores dolore est qui occaecati."], ["created_at", "2016-02-12 23:01:29.471357"], ["updated_at", "2016-02-12 23:01:29.471357"]]
+  [1m[36m (9.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Dolore exercitationem consequatur possimus ipsum dolores eaque."], ["body", "Et in quaerat id non omnis. Quae nisi ut et dignissimos et consequatur occaecati. Eum dolorum quasi. Quo sunt deserunt qui dolorem numquam quia."], ["created_at", "2016-02-12 23:01:29.484417"], ["updated_at", "2016-02-12 23:01:29.484417"]]
+  [1m[35m (11.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 3], ["title", "Deserunt magni voluptatem voluptatem similique ipsa aut molestiae earum."], ["body", "Dignissimos officiis dicta iure animi commodi esse aut. Sint quis reprehenderit eos qui omnis. Maiores autem fugit. Voluptatum consequatur molestiae perspiciatis est. Sit consectetur tenetur harum debitis corrupti."], ["created_at", "2016-02-12 23:01:29.499296"], ["updated_at", "2016-02-12 23:01:29.499296"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Ut esse unde fuga."], ["body", "Porro consectetur aut totam. Voluptas quis saepe eum. Laudantium reiciendis blanditiis ratione temporibus consectetur et."], ["created_at", "2016-02-12 23:01:29.513621"], ["updated_at", "2016-02-12 23:01:29.513621"]]
+  [1m[35m (10.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Nulla enim consequatur non."], ["body", "Itaque alias aut voluptatem. Nihil deserunt similique dolores. Cumque optio et enim mollitia odit perspiciatis. Autem occaecati molestias vero nesciunt. Beatae deserunt nesciunt laborum laudantium voluptatum quos."], ["created_at", "2016-02-12 23:01:29.529111"], ["updated_at", "2016-02-12 23:01:29.529111"]]
+  [1m[36m (9.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["title", "Et sed ipsam consectetur maxime voluptatem nihil."], ["body", "Vero pariatur sint. Quos officia hic. Modi molestiae ad quae earum ullam natus possimus."], ["created_at", "2016-02-12 23:01:29.543192"], ["updated_at", "2016-02-12 23:01:29.543192"]]
+  [1m[35m (9.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Illo quam recusandae praesentium in quae."], ["body", "Ipsum consequatur hic illum tempore. Distinctio earum nesciunt iste omnis accusamus aperiam. Enim id suscipit eius."], ["created_at", "2016-02-12 23:01:29.555608"], ["updated_at", "2016-02-12 23:01:29.555608"]]
+  [1m[36m (9.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["title", "Perferendis rerum neque molestias."], ["body", "Expedita atque dicta est. Et pariatur quaerat rerum maxime. In sunt nihil ex nihil voluptas quam libero. Pariatur ad molestias ea cum reiciendis animi."], ["created_at", "2016-02-12 23:01:29.568385"], ["updated_at", "2016-02-12 23:01:29.568385"]]
+  [1m[35m (10.8ms)[0m  commit transaction
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "wikis"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[36m (15.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" integer DEFAULT 0) [0m
+  [1m[35m (1.1ms)[0m  select sqlite_version(*)
+  [1m[36m (10.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (11.9ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (20.9ms)[0m  CREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (16.9ms)[0m  [1mCREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")[0m
+  [1m[35m (11.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (9.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (16.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160205174329')[0m
+  [1m[35m (22.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160116055801')
+  [1m[36m (18.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160129184537')[0m
+  [1m[35m (22.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" integer DEFAULT 0) 
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (18.8ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (20.8ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (15.2ms)[0m  [1mCREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (14.6ms)[0m  CREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")
+  [1m[36m (13.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (24.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (11.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160205174329')
+  [1m[36m (12.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160116055801')[0m
+  [1m[35m (13.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160129184537')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'harvey@ratke.info' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "harvey@ratke.info"], ["encrypted_password", "$2a$10$3ii2asUymwvRWOjV0jP5dOb2ohr/xzDtAQ2uNsVrbkSLYyHMkW4QW"], ["confirmed_at", "2016-02-12 23:03:44.531520"], ["created_at", "2016-02-12 23:03:44.564075"], ["updated_at", "2016-02-12 23:03:44.564075"]]
+  [1m[36m (17.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'laverna.wilkinson@lang.info' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "laverna.wilkinson@lang.info"], ["encrypted_password", "$2a$10$CFQCC1rNWuw7oDFB684wSuwr5IFgXarH3SgGZsS1UJ8UPP73/DteW"], ["confirmed_at", "2016-02-12 23:03:44.657278"], ["created_at", "2016-02-12 23:03:44.660806"], ["updated_at", "2016-02-12 23:03:44.660806"]]
+  [1m[36m (10.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'melvina@harris.co' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "melvina@harris.co"], ["encrypted_password", "$2a$10$E5kHK6i1fmIQf/syPCM15eE6oN//7FrGIR5aBi76xEeRDFytEU0XK"], ["confirmed_at", "2016-02-12 23:03:44.752869"], ["created_at", "2016-02-12 23:03:44.755565"], ["updated_at", "2016-02-12 23:03:44.755565"]]
+  [1m[36m (13.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'lilyan.murray@wolff.org' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "lilyan.murray@wolff.org"], ["encrypted_password", "$2a$10$4bKCfCY9Krokp5Z3x4KJ9OC8AajhwVu9CgoDlh.8MKwB1z1kbVUre"], ["confirmed_at", "2016-02-12 23:03:44.849214"], ["created_at", "2016-02-12 23:03:44.852428"], ["updated_at", "2016-02-12 23:03:44.852428"]]
+  [1m[36m (10.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'isabel@jakubowski.info' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "isabel@jakubowski.info"], ["encrypted_password", "$2a$10$2n1RQx584uFZOPQo1hYaluvQAOfy59coXtD3ti0.k1m0ujzgnCdta"], ["confirmed_at", "2016-02-12 23:03:44.944974"], ["created_at", "2016-02-12 23:03:44.947998"], ["updated_at", "2016-02-12 23:03:44.947998"]]
+  [1m[36m (12.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'oceansourced@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "oceansourced@gmail.com"], ["encrypted_password", "$2a$10$w9.ytObBfbx.aKSMYT11DuuQFYX5LwKBigPkIkJZKhpsWB.61jNI2"], ["confirmed_at", "2016-02-12 23:03:45.039140"], ["created_at", "2016-02-12 23:03:45.041929"], ["updated_at", "2016-02-12 23:03:45.041929"]]
+  [1m[36m (14.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 3], ["title", "Veritatis ipsam voluptatem laborum voluptas qui nihil velit."], ["body", "Placeat fugiat ut laudantium quisquam dolores. Quia fugit animi aut a. Ipsum adipisci omnis sit at aut explicabo. Atque rerum magnam. Laudantium aut dolor perferendis."], ["created_at", "2016-02-12 23:03:45.109528"], ["updated_at", "2016-02-12 23:03:45.109528"]]
+  [1m[36m (22.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Facere vero eum perspiciatis."], ["body", "Autem quo non architecto dolorem fuga vel. Perspiciatis et beatae quo ratione dicta esse. Magnam at est consectetur modi quis accusamus. Repellat voluptas natus. Cum delectus dicta incidunt quas quia ad."], ["created_at", "2016-02-12 23:03:45.136657"], ["updated_at", "2016-02-12 23:03:45.136657"]]
+  [1m[35m (8.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Aperiam labore vel ea dolores maxime amet."], ["body", "Officiis quidem quam ut consequatur adipisci id nobis. Voluptatem ut delectus consequatur eum expedita ut. Blanditiis maxime nesciunt ea. Totam temporibus quos amet ad."], ["created_at", "2016-02-12 23:03:45.149643"], ["updated_at", "2016-02-12 23:03:45.149643"]]
+  [1m[36m (19.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["title", "Accusantium et voluptatem praesentium consequatur sunt."], ["body", "Nisi atque expedita cumque architecto facilis commodi. Ut sequi et explicabo cumque repudiandae natus suscipit. Culpa voluptatum voluptatibus voluptas ea hic. Eos et saepe."], ["created_at", "2016-02-12 23:03:45.173806"], ["updated_at", "2016-02-12 23:03:45.173806"]]
+  [1m[35m (10.1ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 4], ["title", "Molestiae deleniti labore similique nesciunt neque eius sit doloribus."], ["body", "Dolorem qui rerum dolor ut dolore odio facilis. Voluptas expedita enim ducimus. Facilis provident et explicabo. Ipsum laborum quos nulla. Suscipit praesentium quos sed sunt sed."], ["created_at", "2016-02-12 23:03:45.188698"], ["updated_at", "2016-02-12 23:03:45.188698"]]
+  [1m[36m (10.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["title", "Autem in quia ut tenetur nam suscipit perferendis."], ["body", "Quia molestiae nihil velit mollitia vitae sint. Dolorem et qui ea ad explicabo odio eum. Ex placeat sed harum deserunt nesciunt. Maiores ad ipsum omnis dicta vitae."], ["created_at", "2016-02-12 23:03:45.203533"], ["updated_at", "2016-02-12 23:03:45.203533"]]
+  [1m[35m (11.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Nam illo voluptates veritatis exercitationem sapiente necessitatibus iure."], ["body", "Rerum inventore tempora pariatur culpa eligendi consequatur. Dolor in rerum molestiae natus cupiditate ut. Voluptate eum eum. Omnis molestiae porro illo qui saepe accusantium. Sint eum qui ipsum."], ["created_at", "2016-02-12 23:03:45.219844"], ["updated_at", "2016-02-12 23:03:45.219844"]]
+  [1m[36m (11.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["title", "Totam rerum aut sint esse non molestiae nobis fuga."], ["body", "Eveniet neque totam inventore vitae. Sint officiis excepturi voluptas fugit qui ea eligendi. Iusto rem laborum itaque minus repellendus sequi est. Voluptatem fugiat voluptas veritatis et deserunt distinctio."], ["created_at", "2016-02-12 23:03:45.235522"], ["updated_at", "2016-02-12 23:03:45.235522"]]
+  [1m[35m (13.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 5], ["title", "Nesciunt nihil pariatur qui et."], ["body", "Quae laudantium quam error. Enim delectus alias mollitia dolorum fugit amet. Eligendi assumenda animi. Aliquam libero quis."], ["created_at", "2016-02-12 23:03:45.253330"], ["updated_at", "2016-02-12 23:03:45.253330"]]
+  [1m[36m (9.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["title", "Cum enim deleniti recusandae consectetur quisquam molestiae."], ["body", "Doloribus dolores modi molestiae at consequatur et pariatur. Quia quo non totam. Est quae vel. Repudiandae sunt iure quasi rerum sit deleniti quaerat. Expedita minus voluptatem sunt consequatur aut doloremque."], ["created_at", "2016-02-12 23:03:45.267860"], ["updated_at", "2016-02-12 23:03:45.267860"]]
+  [1m[35m (15.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Quibusdam reprehenderit ipsum est ex molestias ullam modi."], ["body", "Rem quos commodi praesentium voluptatem et ea. Odit quis sed aliquam dolorum eum omnis alias. Ea et magnam voluptatem omnis nulla. Dignissimos ab quo eos iure veniam saepe perferendis. Aut ratione eveniet amet voluptatum."], ["created_at", "2016-02-12 23:03:45.287161"], ["updated_at", "2016-02-12 23:03:45.287161"]]
+  [1m[36m (15.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["title", "Quia architecto et eos asperiores molestiae sapiente ut."], ["body", "Est vero fuga. Tenetur veritatis dolorem sed aliquam illo dolor. Expedita nemo est fugiat non mollitia ea veritatis."], ["created_at", "2016-02-12 23:03:45.306453"], ["updated_at", "2016-02-12 23:03:45.306453"]]
+  [1m[35m (11.3ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Et laudantium sunt id iure labore incidunt et."], ["body", "Mollitia blanditiis consequatur et corporis. Molestiae consequatur ex qui rem et. Cum sed qui optio odio voluptas quidem accusamus. Et tenetur vel et sequi voluptatem quae maiores. Ad vero repellat nisi quia cupiditate aut."], ["created_at", "2016-02-12 23:03:45.323875"], ["updated_at", "2016-02-12 23:03:45.323875"]]
+  [1m[36m (11.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["title", "Eveniet non cumque quas."], ["body", "Nihil quam enim eaque aut. Dolore amet nemo ut quae ea facere adipisci. Qui dolorem qui in. Recusandae cumque quisquam ratione quia et. Culpa ex sit qui."], ["created_at", "2016-02-12 23:03:45.339648"], ["updated_at", "2016-02-12 23:03:45.339648"]]
+  [1m[35m (11.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Quis esse veniam explicabo ullam laborum consectetur est incidunt."], ["body", "Reiciendis corrupti culpa odio vero. Deleniti esse ut. Totam quaerat deleniti reiciendis. Fugit ducimus distinctio. Reiciendis delectus excepturi sit quo."], ["created_at", "2016-02-12 23:03:45.354713"], ["updated_at", "2016-02-12 23:03:45.354713"]]
+  [1m[36m (10.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["title", "Rerum aut necessitatibus deserunt error illo officia."], ["body", "Consequatur amet blanditiis. Voluptatum eveniet quos. Est itaque quidem sed et."], ["created_at", "2016-02-12 23:03:45.369325"], ["updated_at", "2016-02-12 23:03:45.369325"]]
+  [1m[35m (13.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 5], ["title", "Molestiae soluta ut quo."], ["body", "Magni dicta suscipit facilis sunt voluptatum facere. Ut dolorum sit dolores temporibus in. Nihil aut officiis et dolorem."], ["created_at", "2016-02-12 23:03:45.387294"], ["updated_at", "2016-02-12 23:03:45.387294"]]
+  [1m[36m (9.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["title", "Corrupti sunt sunt vero atque ab eos."], ["body", "Ut officiis ut non nesciunt repudiandae quis. Harum quas sapiente excepturi magnam sed quasi. Sed iure qui."], ["created_at", "2016-02-12 23:03:45.400763"], ["updated_at", "2016-02-12 23:03:45.400763"]]
+  [1m[35m (10.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 4], ["title", "Quo quae vel qui culpa iusto voluptas."], ["body", "Voluptatibus quis eum non temporibus. Sed aut aut velit velit nostrum officia. Officia corporis itaque aut consequuntur exercitationem."], ["created_at", "2016-02-12 23:03:45.415971"], ["updated_at", "2016-02-12 23:03:45.415971"]]
+  [1m[36m (11.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["title", "Officia aut magnam consectetur sunt."], ["body", "Quibusdam et officia ab qui. Asperiores rem earum maxime numquam. Sed explicabo consectetur esse porro ex ut."], ["created_at", "2016-02-12 23:03:45.431746"], ["updated_at", "2016-02-12 23:03:45.431746"]]
+  [1m[35m (11.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 5], ["title", "Dolores dignissimos eveniet commodi possimus placeat asperiores maiores vel."], ["body", "Dolor et sed voluptates vero ipsam. Voluptatem nobis possimus labore ut enim aut eum. Quas voluptates sint deserunt."], ["created_at", "2016-02-12 23:03:45.446998"], ["updated_at", "2016-02-12 23:03:45.446998"]]
+  [1m[36m (12.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["title", "Quisquam hic repellendus omnis laborum fugit necessitatibus."], ["body", "Quasi eaque et eos amet et. Optio veniam quia labore consequatur laborum earum repellat. Impedit quae officia est."], ["created_at", "2016-02-12 23:03:45.463300"], ["updated_at", "2016-02-12 23:03:45.463300"]]
+  [1m[35m (8.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 3], ["title", "Debitis doloremque corporis qui voluptatum non vitae."], ["body", "Cum laborum possimus molestiae eius velit. Quasi placeat atque veritatis voluptatem sint. Voluptatem aut ad quia illum quam."], ["created_at", "2016-02-12 23:03:45.477217"], ["updated_at", "2016-02-12 23:03:45.477217"]]
+  [1m[36m (10.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["title", "Quia sunt dolor itaque voluptas eveniet."], ["body", "Et sed quia. Doloremque dolore omnis voluptates. Et enim libero dolorem aut. Iste quia itaque omnis accusantium est molestias."], ["created_at", "2016-02-12 23:03:45.492955"], ["updated_at", "2016-02-12 23:03:45.492955"]]
+  [1m[35m (10.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Eos doloribus architecto corrupti."], ["body", "Dolorum ea minima eum. Nam quis itaque nemo asperiores eveniet quidem et. Repellendus vero debitis maiores dolores qui molestias non. Occaecati aut cumque quo temporibus dolores. Molestiae et temporibus non minus optio."], ["created_at", "2016-02-12 23:03:45.507878"], ["updated_at", "2016-02-12 23:03:45.507878"]]
+  [1m[36m (12.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["title", "Magni sit et at."], ["body", "Eum recusandae repudiandae. Nulla impedit dolor illo iste aut autem consectetur. Veritatis minus est est sed facere rem provident. Sit consequuntur nostrum ut placeat voluptatibus qui voluptate."], ["created_at", "2016-02-12 23:03:45.523711"], ["updated_at", "2016-02-12 23:03:45.523711"]]
+  [1m[35m (11.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Fuga est aut earum."], ["body", "Accusamus delectus doloremque repellat est. Esse ut deleniti quia iste in facere. Corporis quis optio libero at repellat. Non voluptatibus aut. Nisi maiores distinctio quaerat magnam quam minima qui."], ["created_at", "2016-02-12 23:03:45.539708"], ["updated_at", "2016-02-12 23:03:45.539708"]]
+  [1m[36m (12.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Incidunt eaque qui totam eveniet consequatur laudantium."], ["body", "Nemo vero tempora qui. Ea ab quas. Perspiciatis ipsa ducimus. Repellat dolore voluptatem."], ["created_at", "2016-02-12 23:03:45.555312"], ["updated_at", "2016-02-12 23:03:45.555312"]]
+  [1m[35m (10.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 4], ["title", "Nihil aut voluptatibus voluptates quasi qui et."], ["body", "Nemo esse distinctio minima a. Et sequi qui quis nihil. Esse id repellat. Distinctio non molestiae deserunt consequatur sunt. Sunt ut in iusto molestiae voluptas repellendus nihil."], ["created_at", "2016-02-12 23:03:45.569026"], ["updated_at", "2016-02-12 23:03:45.569026"]]
+  [1m[36m (10.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Dicta optio sed quia a."], ["body", "Pariatur quisquam perferendis dignissimos aperiam. Repellendus voluptates nobis. Minima ex illum ea vel saepe. Dolores expedita minima doloribus molestiae voluptatem at voluptas."], ["created_at", "2016-02-12 23:03:45.584025"], ["updated_at", "2016-02-12 23:03:45.584025"]]
+  [1m[35m (10.2ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 5], ["title", "Ullam veritatis ipsa eos doloribus quaerat consequatur consectetur."], ["body", "Reiciendis ea natus veniam rerum. Labore temporibus eum velit et et. Sequi tempora a aliquam pariatur. Optio qui explicabo eaque omnis deserunt. Quas rerum amet saepe voluptatum maxime."], ["created_at", "2016-02-12 23:03:45.599324"], ["updated_at", "2016-02-12 23:03:45.599324"]]
+  [1m[36m (12.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["title", "Eius iste sint voluptatem."], ["body", "Minus quisquam rerum. Illum voluptates et aut nobis et autem. Aliquid nam consequuntur perferendis ut possimus quidem cumque. Tempora similique culpa qui ipsam."], ["created_at", "2016-02-12 23:03:45.615933"], ["updated_at", "2016-02-12 23:03:45.615933"]]
+  [1m[35m (9.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Aut eos minima delectus."], ["body", "Ratione numquam et delectus. Accusantium illum id. Fugit eum ad at sed."], ["created_at", "2016-02-12 23:03:45.628906"], ["updated_at", "2016-02-12 23:03:45.628906"]]
+  [1m[36m (7.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["title", "Non dolor assumenda delectus vero recusandae saepe."], ["body", "Inventore soluta nisi ducimus incidunt non molestias. Voluptatibus ut voluptatem. Qui porro vel rerum. Saepe ratione iure magnam pariatur aspernatur vel."], ["created_at", "2016-02-12 23:03:45.640395"], ["updated_at", "2016-02-12 23:03:45.640395"]]
+  [1m[35m (12.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 6], ["title", "Rem adipisci eos id."], ["body", "Unde sit provident sed ea perferendis quis. Cumque porro voluptas corrupti reprehenderit. Reiciendis quo earum et ullam laborum officiis. Repudiandae consequatur odit enim repellat eum."], ["created_at", "2016-02-12 23:03:45.657022"], ["updated_at", "2016-02-12 23:03:45.657022"]]
+  [1m[36m (11.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["title", "Aliquid doloribus consequatur deleniti ipsa consequatur delectus distinctio vero."], ["body", "Ea quae voluptas illum cupiditate incidunt voluptatibus at. Dolorem consequatur delectus vel temporibus ratione tenetur assumenda. Qui sequi sit vel vel molestiae. Molestiae ducimus vel. Placeat sit explicabo accusantium autem fuga beatae."], ["created_at", "2016-02-12 23:03:45.672147"], ["updated_at", "2016-02-12 23:03:45.672147"]]
+  [1m[35m (11.8ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 6], ["title", "Nulla explicabo quo asperiores ea itaque quia suscipit."], ["body", "Sit voluptatem qui omnis sed. Hic et illum eligendi qui eveniet cupiditate. Et excepturi est quia doloremque fuga quam est."], ["created_at", "2016-02-12 23:03:45.689440"], ["updated_at", "2016-02-12 23:03:45.689440"]]
+  [1m[36m (10.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["title", "Ullam quis temporibus inventore iure minima quae."], ["body", "Quia sunt nam sed maiores. Mollitia ipsum aliquam officiis in consequatur omnis. Nobis odit et ut voluptas quo accusantium excepturi."], ["created_at", "2016-02-12 23:03:45.704351"], ["updated_at", "2016-02-12 23:03:45.704351"]]
+  [1m[35m (11.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 3], ["title", "Et laborum magnam culpa ullam sed iusto."], ["body", "Voluptatum ipsam qui ullam voluptatem deleniti. Nulla esse et atque est ipsa tempore dolorem. Atque tempore et."], ["created_at", "2016-02-12 23:03:45.719104"], ["updated_at", "2016-02-12 23:03:45.719104"]]
+  [1m[36m (10.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["title", "Ea aliquid quia deleniti voluptas aperiam."], ["body", "In doloribus non perspiciatis. Repellat voluptate velit dolorem. Consequatur debitis soluta officiis fugiat est. Ea officiis iusto quo et. Reiciendis nisi architecto asperiores."], ["created_at", "2016-02-12 23:03:45.734013"], ["updated_at", "2016-02-12 23:03:45.734013"]]
+  [1m[35m (10.5ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 6], ["title", "Aut quia cumque modi maiores eum quo."], ["body", "Autem ea inventore magnam eius. Et ipsum ad nihil quis. Sequi aspernatur animi recusandae. Fuga et quaerat iste veritatis rerum qui. Vel neque modi consequatur iure corporis omnis expedita."], ["created_at", "2016-02-12 23:03:45.749794"], ["updated_at", "2016-02-12 23:03:45.749794"]]
+  [1m[36m (9.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["title", "Dolor animi quis consectetur assumenda quas voluptatibus minus neque."], ["body", "Harum deserunt mollitia ut quia et dolorem. Quibusdam eum deserunt id assumenda. Alias ut quas aut. Quae et odio cupiditate."], ["created_at", "2016-02-12 23:03:45.763670"], ["updated_at", "2016-02-12 23:03:45.763670"]]
+  [1m[35m (10.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Id aut laboriosam est alias et doloremque qui voluptatibus."], ["body", "Illum eum asperiores iste ut. Nihil earum eveniet amet assumenda ea sint adipisci. Corrupti eligendi ratione beatae."], ["created_at", "2016-02-12 23:03:45.792201"], ["updated_at", "2016-02-12 23:03:45.792201"]]
+  [1m[36m (11.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["title", "Adipisci deleniti est aliquid quo nobis."], ["body", "Voluptatem distinctio et. Consequuntur odio illo est rerum maxime sit eius. Ad porro sed vitae aut."], ["created_at", "2016-02-12 23:03:45.806979"], ["updated_at", "2016-02-12 23:03:45.806979"]]
+  [1m[35m (10.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Corporis aperiam enim magnam deserunt est sint."], ["body", "Deserunt tempora aperiam. Maxime blanditiis cumque. Aliquam ut et repudiandae laudantium eligendi. Et blanditiis sed."], ["created_at", "2016-02-12 23:03:45.820848"], ["updated_at", "2016-02-12 23:03:45.820848"]]
+  [1m[36m (8.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["title", "Consequuntur voluptate quas non ut accusantium ipsam dolorem rem."], ["body", "Veritatis quasi totam quam porro dolorem. Sed ratione incidunt qui enim eaque perferendis voluptatem. Quia nesciunt qui porro consequuntur officia. Aut dolorem voluptatem et et minima exercitationem voluptatibus. Eius voluptate molestiae molestiae est totam."], ["created_at", "2016-02-12 23:03:45.832315"], ["updated_at", "2016-02-12 23:03:45.832315"]]
+  [1m[35m (11.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 4], ["title", "Sed odit porro eligendi ullam earum dolorem hic molestias."], ["body", "Placeat excepturi ut vitae. Quae nihil suscipit. Nesciunt enim quibusdam explicabo culpa aliquid. Adipisci molestiae cum doloremque est."], ["created_at", "2016-02-12 23:03:45.847742"], ["updated_at", "2016-02-12 23:03:45.847742"]]
+  [1m[36m (14.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["title", "Eveniet asperiores quas nobis ab voluptatem ad."], ["body", "Sed impedit alias. Amet qui sed sequi. Eos tempore earum facilis dolorum quisquam."], ["created_at", "2016-02-12 23:03:45.867463"], ["updated_at", "2016-02-12 23:03:45.867463"]]
+  [1m[35m (11.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 6], ["title", "Ex molestiae accusamus ut sequi."], ["body", "Distinctio dignissimos eos aut. Ex minus omnis. Facere voluptas autem placeat incidunt. Quas quia qui est aut cumque veniam. Iure occaecati velit et."], ["created_at", "2016-02-12 23:03:45.883743"], ["updated_at", "2016-02-12 23:03:45.883743"]]
+  [1m[36m (17.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["title", "Eaque voluptatum ex quasi voluptatibus."], ["body", "Ab quia tenetur molestiae. Magni quos id. Mollitia explicabo id culpa omnis perferendis distinctio animi. Ut cum sit temporibus quos voluptas exercitationem."], ["created_at", "2016-02-12 23:03:45.904854"], ["updated_at", "2016-02-12 23:03:45.904854"]]
+  [1m[35m (10.5ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "wikis"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36m (13.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" integer DEFAULT 0) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (14.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (13.9ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (12.9ms)[0m  CREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (16.0ms)[0m  [1mCREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")[0m
+  [1m[35m (11.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (10.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (10.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160205174329')[0m
+  [1m[35m (12.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160116055801')
+  [1m[36m (11.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160129184537')[0m
+  [1m[35m (12.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" integer DEFAULT 0) 
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (12.4ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (11.1ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (10.5ms)[0m  [1mCREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (13.3ms)[0m  CREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")
+  [1m[36m (11.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (11.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (14.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160205174329')
+  [1m[36m (12.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160116055801')[0m
+  [1m[35m (8.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160129184537')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'caie_spencer@hansenreinger.io' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "caie_spencer@hansenreinger.io"], ["encrypted_password", "$2a$10$hfpN2XtWAMcBmLZJTuFxxu9Vy.UQi9VDH5q/gzERslJEbAH1dm/0a"], ["confirmed_at", "2016-02-12 23:04:58.625591"], ["created_at", "2016-02-12 23:04:58.657187"], ["updated_at", "2016-02-12 23:04:58.657187"]]
+  [1m[36m (18.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'paige@manteheel.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "paige@manteheel.com"], ["encrypted_password", "$2a$10$I61xtsS9v0kA3FLWbbDEtObPNJMlw.IuJA5b7puTqjk4..4Sp./vm"], ["confirmed_at", "2016-02-12 23:04:58.760963"], ["created_at", "2016-02-12 23:04:58.764399"], ["updated_at", "2016-02-12 23:04:58.764399"]]
+  [1m[36m (12.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'jan_kiehn@koepp.name' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "jan_kiehn@koepp.name"], ["encrypted_password", "$2a$10$2pDitlQyfn0olFD42Gc59.qwy39j2o6/obVQRu.t3XI6NGqR0KvyS"], ["confirmed_at", "2016-02-12 23:04:58.852641"], ["created_at", "2016-02-12 23:04:58.855896"], ["updated_at", "2016-02-12 23:04:58.855896"]]
+  [1m[36m (11.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'stuart@maggiopfeffer.biz' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "stuart@maggiopfeffer.biz"], ["encrypted_password", "$2a$10$eQeuJYxQ.IC.X7w2ZjN1busG9APsPf1rUbzZAioBpmZIvVMwD4HVu"], ["confirmed_at", "2016-02-12 23:04:58.955934"], ["created_at", "2016-02-12 23:04:58.959013"], ["updated_at", "2016-02-12 23:04:58.959013"]]
+  [1m[36m (13.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'myron_langworth@gottlieb.org' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "myron_langworth@gottlieb.org"], ["encrypted_password", "$2a$10$OzRvl24MHWSgX3mhu6fIuO2QCQFbMqF56s7d41N0basaw9QRltawO"], ["confirmed_at", "2016-02-12 23:04:59.049340"], ["created_at", "2016-02-12 23:04:59.051854"], ["updated_at", "2016-02-12 23:04:59.051854"]]
+  [1m[36m (12.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'oceansourced@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "oceansourced@gmail.com"], ["encrypted_password", "$2a$10$rkW4MyWC/Zk/RwaxcM/4kO2QP4VwRynyVu3cdswPMi0OBXlKUdiPC"], ["confirmed_at", "2016-02-12 23:04:59.139204"], ["created_at", "2016-02-12 23:04:59.141719"], ["updated_at", "2016-02-12 23:04:59.141719"]]
+  [1m[36m (11.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "wikis"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[36m (22.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" integer DEFAULT 0) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (22.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (13.0ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (8.6ms)[0m  CREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (13.7ms)[0m  [1mCREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")[0m
+  [1m[35m (11.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (10.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (10.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160205174329')[0m
+  [1m[35m (7.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160116055801')
+  [1m[36m (8.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160129184537')[0m
+  [1m[35m (12.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "role" integer DEFAULT 0) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (12.6ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (9.8ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (14.8ms)[0m  [1mCREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (8.0ms)[0m  CREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")
+  [1m[36m (10.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (10.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (10.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160205174329')
+  [1m[36m (8.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160116055801')[0m
+  [1m[35m (10.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160129184537')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'savion_windler@turner.name' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "savion_windler@turner.name"], ["encrypted_password", "$2a$10$HRYAHmaLjYVw2hEDGRIbeeWRqqpyCbqOiy3jH7v4Pc0gLPqRaTqIi"], ["confirmed_at", "2016-02-12 23:05:42.357241"], ["created_at", "2016-02-12 23:05:42.390486"], ["updated_at", "2016-02-12 23:05:42.390486"]]
+  [1m[36m (12.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'oceansourced@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "oceansourced@gmail.com"], ["encrypted_password", "$2a$10$UiOksD0I/ASlFKR/1rVaBewsDDxR1Egaalz2KUdg29bc1jUb/Kenu"], ["confirmed_at", "2016-02-12 23:05:42.488472"], ["created_at", "2016-02-12 23:05:42.491728"], ["updated_at", "2016-02-12 23:05:42.491728"]]
+  [1m[36m (10.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Et quisquam tenetur quia enim doloribus quasi autem molestias."], ["body", "Repellat molestiae pariatur eos inventore doloribus cum. Ducimus aliquid ipsam nihil numquam. Nemo sed assumenda et saepe earum. Officia rem possimus id quia qui veritatis sint."], ["created_at", "2016-02-12 23:05:42.561183"], ["updated_at", "2016-02-12 23:05:42.561183"]]
+  [1m[36m (16.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Eligendi sint voluptatibus assumenda nisi animi qui porro facere."], ["body", "Qui aperiam et excepturi in ullam quia iste. Repellat qui qui id. Et quia labore. In dignissimos reprehenderit id iure quo est quaerat."], ["created_at", "2016-02-12 23:05:42.584713"], ["updated_at", "2016-02-12 23:05:42.584713"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Est rerum at nihil eaque non et."], ["body", "Magni aliquid provident deleniti. Et nulla esse qui. Accusamus quibusdam illo doloribus."], ["created_at", "2016-02-12 23:05:42.598145"], ["updated_at", "2016-02-12 23:05:42.598145"]]
+  [1m[36m (10.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "In labore qui autem omnis."], ["body", "Pariatur minima repudiandae culpa qui. Facere et sit velit ex omnis vel error. Et aut minus dolorum sit. Mollitia sunt qui in."], ["created_at", "2016-02-12 23:05:42.612521"], ["updated_at", "2016-02-12 23:05:42.612521"]]
+  [1m[35m (14.0ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Cupiditate dolor voluptatem odio."], ["body", "Nihil nam ut earum sapiente sint quasi voluptatem. Quam laborum consequatur ut fugit adipisci. Ut in quos ad aut."], ["created_at", "2016-02-12 23:05:42.631440"], ["updated_at", "2016-02-12 23:05:42.631440"]]
+  [1m[36m (14.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Blanditiis facere error consequuntur cum id."], ["body", "Vitae sint architecto a. Quae non corrupti omnis occaecati. Consequatur ad ut est harum quo tempora rem. Ad est consectetur."], ["created_at", "2016-02-12 23:05:42.650037"], ["updated_at", "2016-02-12 23:05:42.650037"]]
+  [1m[35m (17.3ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Ea aperiam voluptate et cupiditate est laborum non nostrum."], ["body", "Sit debitis quibusdam explicabo modi dolore et repellat. Laboriosam perferendis deleniti id distinctio rerum qui. Quo consequatur architecto quia ullam exercitationem ex quia."], ["created_at", "2016-02-12 23:05:42.672769"], ["updated_at", "2016-02-12 23:05:42.672769"]]
+  [1m[36m (12.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Cupiditate esse fugiat tenetur facere nam."], ["body", "Rerum expedita et non eum consequatur. Dolore occaecati voluptatum necessitatibus et. Natus molestiae nihil placeat ratione."], ["created_at", "2016-02-12 23:05:42.691886"], ["updated_at", "2016-02-12 23:05:42.691886"]]
+  [1m[35m (11.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Id sed esse qui dolor."], ["body", "Sint asperiores aliquam similique ut quasi eum. Voluptatem quos repellendus. Quis incidunt temporibus placeat consequatur quia. Nemo repellat labore iste occaecati voluptas qui ut. Adipisci illum dignissimos voluptatem officia."], ["created_at", "2016-02-12 23:05:42.708417"], ["updated_at", "2016-02-12 23:05:42.708417"]]
+  [1m[36m (10.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["title", "Eligendi omnis odio aut."], ["body", "Sapiente fuga dignissimos nostrum. Quas aspernatur voluptatem ex id itaque dignissimos. Et possimus cum. Numquam dicta est nemo ut."], ["created_at", "2016-02-12 23:05:42.723519"], ["updated_at", "2016-02-12 23:05:42.723519"]]
+  [1m[35m (11.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Impedit quod nobis laudantium maxime."], ["body", "Repudiandae impedit similique. Reprehenderit voluptatem a nulla. Rerum facilis aperiam et molestiae et earum. Consequatur dolorem non modi commodi porro maxime."], ["created_at", "2016-02-12 23:05:42.738899"], ["updated_at", "2016-02-12 23:05:42.738899"]]
+  [1m[36m (12.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["title", "Rerum maiores delectus occaecati error alias ullam tempora debitis."], ["body", "Odit quo quia dignissimos aut quasi magnam. Ipsam vitae dolorem ut laboriosam qui recusandae. Necessitatibus voluptas itaque quam dolorem laboriosam. Rerum ut assumenda ipsam rerum. Qui commodi nihil laboriosam."], ["created_at", "2016-02-12 23:05:42.756054"], ["updated_at", "2016-02-12 23:05:42.756054"]]
+  [1m[35m (10.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Unde eligendi mollitia minus consequatur voluptatem aspernatur omnis."], ["body", "Cupiditate odit perferendis est ab fuga aut. Ut repudiandae perferendis voluptatem eum ut. Est doloribus et laboriosam provident."], ["created_at", "2016-02-12 23:05:42.770606"], ["updated_at", "2016-02-12 23:05:42.770606"]]
+  [1m[36m (9.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["title", "Natus dolorum animi temporibus adipisci."], ["body", "Esse aut ut. Voluptatem ad autem ducimus voluptate. Et ea ut unde. Excepturi at distinctio repellendus non aut vel."], ["created_at", "2016-02-12 23:05:42.783590"], ["updated_at", "2016-02-12 23:05:42.783590"]]
+  [1m[35m (9.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Accusamus rerum officiis natus a aut."], ["body", "Quas magni distinctio omnis ut nostrum. Aliquam dolore possimus qui quisquam reprehenderit facilis quaerat. Facilis quas praesentium accusamus autem tempore. Quam suscipit iure facilis aut animi quas."], ["created_at", "2016-02-12 23:05:42.796302"], ["updated_at", "2016-02-12 23:05:42.796302"]]
+  [1m[36m (11.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Aliquid ipsam sit unde."], ["body", "Iure tempore ipsum impedit. Optio magni facilis voluptas consequuntur dolor placeat ab. Qui voluptas ipsum nobis quia quo sed."], ["created_at", "2016-02-12 23:05:42.811928"], ["updated_at", "2016-02-12 23:05:42.811928"]]
+  [1m[35m (11.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Ab facilis culpa et eius et in."], ["body", "Omnis et velit quaerat in ut. Dolorem quae voluptatem. Repudiandae eius doloremque."], ["created_at", "2016-02-12 23:05:42.827498"], ["updated_at", "2016-02-12 23:05:42.827498"]]
+  [1m[36m (12.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Occaecati sunt voluptate alias."], ["body", "Vero dolor facilis ratione. Et fuga pariatur et. Maiores eveniet dignissimos qui repellat aliquid."], ["created_at", "2016-02-12 23:05:42.845949"], ["updated_at", "2016-02-12 23:05:42.845949"]]
+  [1m[35m (14.3ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Consequatur quae sunt voluptatem et provident iure."], ["body", "Incidunt laborum aut nesciunt vitae ut rerum. Exercitationem eos ut quo reiciendis tempore praesentium. Quas qui eos ipsam et quia. Molestiae velit repellendus. Est ut fugit."], ["created_at", "2016-02-12 23:05:42.865609"], ["updated_at", "2016-02-12 23:05:42.865609"]]
+  [1m[36m (10.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["title", "Veritatis doloribus eos quia."], ["body", "Ut quis ratione dolorem tempora voluptates qui. Minus excepturi commodi expedita. Omnis quasi quia dolorum sed maiores odio. Qui laborum delectus dicta et. Eius et quisquam aliquam dolorem voluptatem."], ["created_at", "2016-02-12 23:05:42.880464"], ["updated_at", "2016-02-12 23:05:42.880464"]]
+  [1m[35m (7.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Distinctio incidunt et ea est accusamus et et ullam."], ["body", "Reiciendis rerum velit sequi et. Sed qui voluptates quia saepe. Dolorem optio ut placeat soluta cupiditate. Et aliquid ut. Quis dignissimos placeat aut."], ["created_at", "2016-02-12 23:05:42.891796"], ["updated_at", "2016-02-12 23:05:42.891796"]]
+  [1m[36m (9.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Sint possimus expedita sunt iusto quam aliquid."], ["body", "Nam qui voluptatibus eos fugiat suscipit non. Doloremque illo aut autem qui explicabo. Quis est qui cum culpa officia corrupti. Earum consequatur doloremque nihil quidem fugiat eius praesentium. Et qui officia optio in molestias itaque sit."], ["created_at", "2016-02-12 23:05:42.904843"], ["updated_at", "2016-02-12 23:05:42.904843"]]
+  [1m[35m (8.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Sunt sint cupiditate doloribus velit atque qui aliquam numquam."], ["body", "Inventore dolore omnis sint libero sint. Sint sit eum eum totam dolore porro laboriosam. Doloribus tenetur maiores blanditiis et delectus temporibus perspiciatis."], ["created_at", "2016-02-12 23:05:42.916558"], ["updated_at", "2016-02-12 23:05:42.916558"]]
+  [1m[36m (11.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Aliquam consectetur delectus aspernatur est."], ["body", "Ut voluptatem praesentium et. Beatae qui recusandae. Voluptas labore et. Iste quis occaecati est porro."], ["created_at", "2016-02-12 23:05:42.931376"], ["updated_at", "2016-02-12 23:05:42.931376"]]
+  [1m[35m (11.7ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Quibusdam placeat sed veritatis."], ["body", "Voluptatem at porro. Velit voluptatem repudiandae laborum dolor in. Consectetur sed quod culpa et accusantium."], ["created_at", "2016-02-12 23:05:42.948531"], ["updated_at", "2016-02-12 23:05:42.948531"]]
+  [1m[36m (11.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Aut rerum quos voluptas est."], ["body", "Quasi placeat repudiandae aliquam mollitia aut nulla. Dolorum id aut adipisci perspiciatis sint enim. Harum sunt nihil. Sed a omnis incidunt et. Totam deserunt in."], ["created_at", "2016-02-12 23:05:42.964076"], ["updated_at", "2016-02-12 23:05:42.964076"]]
+  [1m[35m (11.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Rerum quaerat dicta nulla."], ["body", "Sit ipsam nesciunt aperiam ea molestias dolore aut. Dolor repellendus voluptatem officiis error. Repellendus eveniet tempora repudiandae voluptatem eius. Enim id blanditiis sint et voluptas."], ["created_at", "2016-02-12 23:05:42.978599"], ["updated_at", "2016-02-12 23:05:42.978599"]]
+  [1m[36m (9.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["title", "Fugiat quo suscipit ipsum aliquid."], ["body", "Et sint quia tempora eum inventore hic. Ex exercitationem rerum fuga. Est aliquid est autem sit repellendus. Facere expedita dolorem similique saepe."], ["created_at", "2016-02-12 23:05:42.992659"], ["updated_at", "2016-02-12 23:05:42.992659"]]
+  [1m[35m (10.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Illo corporis est qui repellat."], ["body", "Suscipit qui ipsa tempore cumque explicabo voluptatem. Blanditiis fugit inventore mollitia. Ipsam qui quis."], ["created_at", "2016-02-12 23:05:43.007902"], ["updated_at", "2016-02-12 23:05:43.007902"]]
+  [1m[36m (9.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["title", "Qui dolor quia repellendus facilis."], ["body", "Error non accusantium iure rerum et. Non saepe molestiae ipsam qui. Culpa et dignissimos quis quibusdam amet veniam. Eius possimus explicabo corrupti. Dolores aut dignissimos voluptas qui ut."], ["created_at", "2016-02-12 23:05:43.020953"], ["updated_at", "2016-02-12 23:05:43.020953"]]
+  [1m[35m (11.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Quaerat nobis at odit nulla optio corrupti velit consequatur."], ["body", "Et quidem adipisci aut maiores. Quia odio alias. Et culpa ut. Nemo quas enim beatae. Expedita velit quia."], ["created_at", "2016-02-12 23:05:43.035271"], ["updated_at", "2016-02-12 23:05:43.035271"]]
+  [1m[36m (10.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Est ut sed eum earum mollitia illo labore quam."], ["body", "Suscipit voluptatum assumenda voluptatem ea. Voluptas ut temporibus facere asperiores dolorem. Accusamus molestiae autem magnam qui aliquam doloribus. Impedit hic suscipit est beatae."], ["created_at", "2016-02-12 23:05:43.048848"], ["updated_at", "2016-02-12 23:05:43.048848"]]
+  [1m[35m (10.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Expedita quo provident dolorem non aut sapiente."], ["body", "Rerum deserunt et blanditiis non placeat dolorem. Consequuntur nam nisi enim vel placeat porro molestias. A nisi quos qui velit. Voluptates eveniet enim velit. Cupiditate quasi suscipit autem deserunt quae explicabo eum."], ["created_at", "2016-02-12 23:05:43.063507"], ["updated_at", "2016-02-12 23:05:43.063507"]]
+  [1m[36m (9.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Non ipsam earum molestiae quidem voluptate delectus ut eos."], ["body", "Esse ipsa neque optio. Eum aut consequatur sed earum qui dolor. Itaque consequuntur pariatur maxime. Ducimus dolorum rerum fuga saepe enim aut nihil. Id modi officia adipisci cupiditate et facere recusandae."], ["created_at", "2016-02-12 23:05:43.076269"], ["updated_at", "2016-02-12 23:05:43.076269"]]
+  [1m[35m (11.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Itaque voluptate beatae corporis sed qui facilis libero quis."], ["body", "Qui omnis asperiores nobis iure. Laudantium id quasi quaerat. Totam alias doloribus accusantium quam quaerat. Unde minima sint quibusdam ad ut. Et voluptatem quia consequatur."], ["created_at", "2016-02-12 23:05:43.091603"], ["updated_at", "2016-02-12 23:05:43.091603"]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["title", "Voluptas itaque natus sequi quia aut."], ["body", "Molestias laudantium incidunt dolores. Ipsum quasi quia nisi eligendi quo. Perspiciatis error minima numquam."], ["created_at", "2016-02-12 23:05:43.104968"], ["updated_at", "2016-02-12 23:05:43.104968"]]
+  [1m[35m (7.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Voluptatem amet qui in exercitationem sunt."], ["body", "Et quia quisquam laborum est. Magnam tempora earum voluptatem. Autem vitae adipisci aut. Commodi alias earum."], ["created_at", "2016-02-12 23:05:43.117273"], ["updated_at", "2016-02-12 23:05:43.117273"]]
+  [1m[36m (10.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["title", "Quam occaecati esse ullam et ut."], ["body", "Omnis expedita molestiae omnis qui id consequatur. Veniam maxime sit expedita non quos recusandae eius. Accusantium eveniet est. Eius soluta aut qui vel mollitia possimus."], ["created_at", "2016-02-12 23:05:43.131187"], ["updated_at", "2016-02-12 23:05:43.131187"]]
+  [1m[35m (9.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Eveniet dolor expedita iste eos aut autem."], ["body", "Et soluta necessitatibus et tenetur. Temporibus sint quibusdam asperiores et error rerum deserunt. Harum eum fugit iste distinctio a aut."], ["created_at", "2016-02-12 23:05:43.144043"], ["updated_at", "2016-02-12 23:05:43.144043"]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["title", "Molestias ipsa architecto qui voluptatibus harum omnis aspernatur corrupti."], ["body", "Occaecati similique quod quo labore sint sit deserunt. Corrupti eligendi molestias incidunt. Rem amet dolor similique occaecati ex provident sit."], ["created_at", "2016-02-12 23:05:43.157260"], ["updated_at", "2016-02-12 23:05:43.157260"]]
+  [1m[35m (9.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Numquam aspernatur tenetur quisquam."], ["body", "Reprehenderit voluptatem ex velit. Perspiciatis dolorem aliquid beatae impedit consectetur aut magnam. Ut et voluptatem sit blanditiis. Ipsam nam autem odio eos magnam commodi."], ["created_at", "2016-02-12 23:05:43.170800"], ["updated_at", "2016-02-12 23:05:43.170800"]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["title", "Eum aut pariatur similique magnam est dolor nobis."], ["body", "Corrupti aut facere necessitatibus omnis quos sunt. Earum impedit enim consectetur. Rerum molestias ut sit voluptates autem."], ["created_at", "2016-02-12 23:05:43.183389"], ["updated_at", "2016-02-12 23:05:43.183389"]]
+  [1m[35m (9.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["title", "Illum quia consequatur molestias magni."], ["body", "Sed provident quaerat. Quia error temporibus cumque sed. Ad aut voluptate pariatur. Rerum voluptatem id in quo odio quasi."], ["created_at", "2016-02-12 23:05:43.195978"], ["updated_at", "2016-02-12 23:05:43.195978"]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["title", "Aut ad et eaque est omnis ipsa."], ["body", "Id temporibus in ad dolores cumque sit. Est officiis consectetur. Pariatur est dolorum ut laudantium libero repudiandae. Ut neque doloremque placeat."], ["created_at", "2016-02-12 23:05:43.208267"], ["updated_at", "2016-02-12 23:05:43.208267"]]
+  [1m[35m (11.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Optio dolorem vero in sed impedit."], ["body", "Sint quod libero fugiat rerum omnis. Et optio omnis possimus aliquam perferendis. Autem sit et quia aliquam. Sunt facere et."], ["created_at", "2016-02-12 23:05:43.224429"], ["updated_at", "2016-02-12 23:05:43.224429"]]
+  [1m[36m (7.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Consequatur itaque eum enim modi similique minus molestiae repellendus."], ["body", "Amet aliquid vero suscipit officia. Quia reprehenderit suscipit. Voluptatem rerum dolorem reprehenderit delectus provident."], ["created_at", "2016-02-12 23:05:43.235622"], ["updated_at", "2016-02-12 23:05:43.235622"]]
+  [1m[35m (9.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Dicta sunt est saepe omnis voluptates."], ["body", "Voluptas perferendis sint quam. Sit eos dolore blanditiis nemo possimus. Ea voluptatem fugiat tempore quia facilis aut deleniti. Et non consequatur."], ["created_at", "2016-02-12 23:05:43.248861"], ["updated_at", "2016-02-12 23:05:43.248861"]]
+  [1m[36m (10.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Quo delectus consequatur fugit ullam qui corrupti molestias."], ["body", "Nesciunt ratione ea fuga ut enim corrupti. Et enim aut placeat unde. Neque ipsa quia culpa aut vero. Rem neque et sint delectus sequi cumque."], ["created_at", "2016-02-12 23:05:43.263020"], ["updated_at", "2016-02-12 23:05:43.263020"]]
+  [1m[35m (8.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["title", "Occaecati nostrum et aperiam autem sunt quidem."], ["body", "Soluta et labore velit aut autem praesentium. Aperiam sed quisquam architecto. Nisi dolore illo unde voluptas et officia in. Vitae quia iure et."], ["created_at", "2016-02-12 23:05:43.275393"], ["updated_at", "2016-02-12 23:05:43.275393"]]
+  [1m[36m (9.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "wikis" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Nesciunt quo nihil voluptas porro est non."], ["body", "Suscipit ut unde doloribus iste quod autem. Velit sint et ut. Qui fugiat suscipit aut sapiente non. Adipisci officia quia veniam. Alias perspiciatis quod omnis pariatur assumenda."], ["created_at", "2016-02-12 23:05:43.299511"], ["updated_at", "2016-02-12 23:05:43.299511"]]
+  [1m[35m (9.6ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "wikis"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
