@@ -2,7 +2,7 @@ source 'https://rubygems.org'
  
  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
  gem 'rails', '4.2.5'
- gem 'figaro'
+ gem 'figaro' , '1.0'
  
  # #1
  group :production do
@@ -35,3 +35,5 @@ source 'https://rubygems.org'
  gem 'pundit'
  
  gem 'faker'
+ 
+ gem 'stripe'

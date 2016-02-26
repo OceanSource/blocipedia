@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
 
   # sets default role on creation
   def set_role
-    self.role = 'standard'
+    self.role ||= :standard
   end
 
 end

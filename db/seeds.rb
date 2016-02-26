@@ -12,15 +12,16 @@
 end
  
  #Create admin user
- ocean = User.new(
-    email: 'oceansourced@gmail.com',
-    password: 'passpass',
-    role: 2
-  )
-  ocean.skip_confirmation!
-  ocean.save
-  
-  users = User.all
+ocean = User.find_or_initialize_by(
+  email: 'oceansourced@gmail.com',
+  role: 2
+)
+ocean.password = 'passpass'
+
+ocean.skip_confirmation!
+ocean.save
+
+users = User.all
  
  
  50.times do
