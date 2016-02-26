@@ -1,4 +1,33 @@
+<br>
 <h1>Welcome to Blocipedia</h1>
-<p>This is the home page for Blocipedia.</p>
- <div class="wikis">Post 1 goes here.</div>
- <div class="wikis">Post 2 goes here.</div>
+
+<div class = 'teal box centered-text shift-down move-to-center'> Create and share your Wikis!
+  <% if !current_user %>
+    <%= button_to "Sign Up", new_user_registration_path, :class => "green-btn centered-text", 
+    :method => :get %>
+  <% end %>
+</div>
+
+
+<div class = 'row'>
+
+  <div class="col-md-4 col-md-offset-2 shift-down">Create unlimited number<br>
+  of free wikis with free plan
+  <br> 
+  
+      <% if current_user && current_user.premium? %>
+          <%= button_to "Free", charges_downgrade_path, :class => "green-btn centered-text", 
+          :method => :get %>
+      <% end %>
+  </div> 
+
+  <div class="col-md-4 col-md-offset-2 shift-down">Create private wikis<br> with
+    premium plan<br>
+      <% if current_user && current_user.public? %>
+        <%= button_to "Premium", new_charge_path, :class => "green-btn centered-text", 
+        :method => :get %>
+      <% end %>
+  </div>
+
+</div>
+

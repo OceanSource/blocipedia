@@ -1,7 +1,7 @@
 class WikiPolicy < ApplicationPolicy
 
-  def index?
-    true
-  end
+def edit?
+  user.present?
+end
 
 end

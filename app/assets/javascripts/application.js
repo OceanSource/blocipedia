@@ -15,3 +15,39 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+.shift-right {
+  margin-left: 100px
+}
+
+.shift-left {
+  margin-right: 100px
+}
+
+.shift-down {
+  margin-top: 100px;
+}
+
+.move-to-center {
+  margin: 0 auto;
+}
+
+.green-btn {
+  background: #acc906;
+  border-radius: 40px;
+  width: 200px;
+  padding: -10px;
+  margin-top: 30px;
+  font-family: Arial;
+  color: white;
+  font-size: 20px;
+}
+
+.container {
+  border: solid;
+  width: 600px;
+}
+
+.scrollable {
+  overflow-y: scroll
+}

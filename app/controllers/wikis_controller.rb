@@ -14,7 +14,7 @@
 class WikisController < ApplicationController
 
   def index
-    @wikis = Wiki.all
+    @wikis = Wiki.where(private: false)
     authorize @wikis
   end
 
@@ -28,7 +28,7 @@ class WikisController < ApplicationController
   end
 
   def create
-    @wiki = Wiki.new(params.require(:wiki).permit(:title, :body, :private))
+    @wiki = Wiki.new(params.require(:wiki).permit(:title, :body, :private, false))
     authorize @wiki
 
     if @wiki.save
@@ -51,7 +51,7 @@ class WikisController < ApplicationController
 
     if @wiki.update_attributes(params.require(:wiki).permit(:title, :body, :private))
       flash[:notice] = "Wiki has been updated."
-      redirect_to @wiki
+      redirect_to @wiki.user
     else
       flash[:error] = "There was an error updating the wiki. Please try again."
       render :edit

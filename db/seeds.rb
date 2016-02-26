@@ -12,14 +12,34 @@
 end
  
  #Create admin user
-ocean = User.find_or_initialize_by(
-  email: 'oceansourced@gmail.com',
+admin = User.find_or_initialize_by(
+  email: 'admin@gmail.com',
   role: 2
 )
-ocean.password = 'passpass'
+admin.password = 'passpass'
 
-ocean.skip_confirmation!
-ocean.save
+admin.skip_confirmation!
+admin.save
+
+ #Create premium user
+premium = User.find_or_initialize_by(
+  email: 'premium@gmail.com',
+  role: 1
+)
+premium.password = 'passpass'
+
+premium.skip_confirmation!
+premium.save
+
+ #Create standard user
+standard = User.find_or_initialize_by(
+  email: 'standard@gmail.com',
+  role: 0
+)
+standard.password = 'passpass'
+
+standard.skip_confirmation!
+standard.save
 
 users = User.all
  

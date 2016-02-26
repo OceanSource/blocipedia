@@ -45,6 +45,10 @@ class User < ActiveRecord::Base
   def public?
     role == 'standard'
   end
+  
+  def downgrade_account
+    self.update_attribute(:role, 'standard')
+  end
 
   # sets default role on creation
   def set_role

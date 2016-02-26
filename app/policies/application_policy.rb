@@ -7,7 +7,7 @@ class ApplicationPolicy
   end
 
   def index?
-    false
+    true
   end
 
   def show?
@@ -15,7 +15,7 @@ class ApplicationPolicy
   end
 
   def create?
-    user.present?
+    user.present? && current_user = user
   end
 
   def new?
@@ -23,7 +23,7 @@ class ApplicationPolicy
   end
 
   def update?
-    user.present?
+    (user.present? && record.user == user)
   end
 
   def edit?
