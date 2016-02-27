@@ -1,33 +1,30 @@
-<br>
 <h1>Welcome to Blocipedia</h1>
 
-<div class = 'teal box centered-text shift-down move-to-center'> Create and share your Wikis!
   <% if !current_user %>
-    <%= button_to "Sign Up", new_user_registration_path, :class => "green-btn centered-text", 
-    :method => :get %>
+    <div class = 'teal box centered-text shift-down move-to-center'> 
+      <br>
+        Create and share your Wikis!
+        <%= button_to "Sign Up", new_user_registration_path, :class => "green-btn centered-text", 
+        :method => :get %>
+    </div>
   <% end %>
-</div>
 
+  <% if current_user && current_user.premium? %>
+    <div class='teal box centered-text shift-down move-to-center'> 
+      <br>
+        Create unlimited number of free wikis with free plan
+        <%= button_to "Free", charges_downgrade_path, :class => "green-btn centered-text", 
+        :method => :get %>
+    </div> 
+  <% end %>
 
-<div class = 'row'>
-
-  <div class="col-md-4 col-md-offset-2 shift-down">Create unlimited number<br>
-  of free wikis with free plan
-  <br> 
-  
-      <% if current_user && current_user.premium? %>
-          <%= button_to "Free", charges_downgrade_path, :class => "green-btn centered-text", 
-          :method => :get %>
-      <% end %>
-  </div> 
-
-  <div class="col-md-4 col-md-offset-2 shift-down">Create private wikis<br> with
-    premium plan<br>
-      <% if current_user && current_user.public? %>
+  <% if current_user && current_user.public? %>
+    <div class='teal box centered-text shift-down move-to-center'> 
+      <br>
+        Create private wikis with premium plan
         <%= button_to "Premium", new_charge_path, :class => "green-btn centered-text", 
         :method => :get %>
-      <% end %>
-  </div>
+    </div>
+  <% end %>
 
-</div>
 

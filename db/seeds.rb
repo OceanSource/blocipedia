@@ -13,7 +13,7 @@ end
  
  #Create admin user
 admin = User.find_or_initialize_by(
-  email: 'admin@gmail.com',
+  email: 'admin@admin.com',
   role: 2
 )
 admin.password = 'passpass'
@@ -23,7 +23,7 @@ admin.save
 
  #Create premium user
 premium = User.find_or_initialize_by(
-  email: 'premium@gmail.com',
+  email: 'premium@premium.com',
   role: 1
 )
 premium.password = 'passpass'
@@ -33,7 +33,7 @@ premium.save
 
  #Create standard user
 standard = User.find_or_initialize_by(
-  email: 'standard@gmail.com',
+  email: 'standard@standard.com',
   role: 0
 )
 standard.password = 'passpass'

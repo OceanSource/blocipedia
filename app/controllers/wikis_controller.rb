@@ -14,7 +14,8 @@
 class WikisController < ApplicationController
 
   def index
-    @wikis = Wiki.where(private: false)
+    #@wikis = Wiki.where(private: false)
+    @wikis = Wiki.all
     authorize @wikis
   end
 
