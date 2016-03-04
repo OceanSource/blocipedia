@@ -13,11 +13,13 @@
 
 class Wiki < ActiveRecord::Base
   belongs_to :user
+  
+  scope :visible_to, -> (user) { user ? all : where(private: false) }
 
-  #after_initialize :make_public
+  after_initialize :make_public
   ## Method causes problems when making wikis private
 
-  default_scope { order('title ASC') }
+  default_scope { order('created_at DESC') }
 
 
   def private?

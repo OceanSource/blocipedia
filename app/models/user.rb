@@ -48,8 +48,10 @@ class User < ActiveRecord::Base
   
   def downgrade_account
     self.update_attribute(:role, 'standard')
+    self.wikis.where(private: true).update_all(private: false)
   end
 
+ private
   # sets default role on creation
   def set_role
     self.role ||= :standard

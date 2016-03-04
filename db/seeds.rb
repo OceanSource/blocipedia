@@ -3,6 +3,7 @@
 #Create users
 1.times do
     user = User.new(
+    name: Faker::Name.name,
     email: Faker::Internet.email,
     password: Faker::Lorem.characters(10)
   )
@@ -13,6 +14,7 @@ end
  
  #Create admin user
 admin = User.find_or_initialize_by(
+  name: 'AdminUser',
   email: 'admin@admin.com',
   role: 2
 )
@@ -23,6 +25,7 @@ admin.save
 
  #Create premium user
 premium = User.find_or_initialize_by(
+  name: 'PremiumUser',
   email: 'premium@premium.com',
   role: 1
 )
@@ -33,6 +36,7 @@ premium.save
 
  #Create standard user
 standard = User.find_or_initialize_by(
+  name: 'StandardUser',
   email: 'standard@standard.com',
   role: 0
 )
