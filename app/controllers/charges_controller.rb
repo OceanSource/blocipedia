@@ -4,7 +4,7 @@ after_action :make_premium, only: :create
   
 def new
   @stripe_btn_data = {
-    key: "#{ Rails.configuration.stripe[:stripe_publishable_key] }",
+    key: ENV['stripe_publishable_key'],
     description: "Premium Membership - #{current_user.email}",
     amount: Amount.default
   }

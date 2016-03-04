@@ -20074,3 +20074,206 @@ Processing by WikisController#index as HTML
   [1m[36mWiki Load (0.5ms)[0m  [1mSELECT "wikis".* FROM "wikis"  ORDER BY title ASC[0m
   Rendered wikis/index.html.erb within layouts/application (21.2ms)
 Completed 200 OK in 102ms (Views: 92.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 71.53.79.37 at 2016-02-27 15:19:04 +0000
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered welcome/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 87ms (Views: 86.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/confirmation?confirmation_token=er8_qHyf4Fj_GXfrFRoT&" for 108.46.169.188 at 2016-02-27 16:06:00 +0000
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"er8_qHyf4Fj_GXfrFRoT"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["confirmation_token", "er8_qHyf4Fj_GXfrFRoT"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["confirmation_token", "64be9134c2330a0bb8645b8dc3e06270facdcf400324b4d97a634a28fa6eef98"]]
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (8.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/confirmations/new.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 416ms (Views: 108.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2413bb885642534c6c8eb6ae9a9021884bdec92ab736cf33e74aac3bb640e50a.css?body=1" for 108.46.169.188 at 2016-02-27 16:06:00 +0000
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 108.46.169.188 at 2016-02-27 16:06:00 +0000
+
+
+Started GET "/assets/charges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 108.46.169.188 at 2016-02-27 16:06:00 +0000
+
+
+Started GET "/assets/wikis.self-e83ec40daf71781b2e86d1939794a39834946233951aae6caea592e0f898e9bc.css?body=1" for 108.46.169.188 at 2016-02-27 16:06:00 +0000
+
+
+Started GET "/assets/application.self-273116464cb451cb014d9ff0a4b3ee5ae6da3097310fafd9e6fe5e38975e66df.css?body=1" for 108.46.169.188 at 2016-02-27 16:06:00 +0000
+
+
+Started GET "/assets/welcome.self-4906560758c758918a68f6e528d16ceef9aa7f3a1f2b0c6bb6ca325fd12f00ad.css?body=1" for 108.46.169.188 at 2016-02-27 16:06:01 +0000
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 108.46.169.188 at 2016-02-27 16:06:01 +0000
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 108.46.169.188 at 2016-02-27 16:06:01 +0000
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 108.46.169.188 at 2016-02-27 16:06:01 +0000
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for 108.46.169.188 at 2016-02-27 16:06:01 +0000
+
+
+Started GET "/assets/charges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 108.46.169.188 at 2016-02-27 16:06:01 +0000
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 108.46.169.188 at 2016-02-27 16:06:01 +0000
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 108.46.169.188 at 2016-02-27 16:06:01 +0000
+
+
+Started GET "/assets/wikis.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 108.46.169.188 at 2016-02-27 16:06:01 +0000
+
+
+Started GET "/assets/application.self-591b4a8c014d310bedeb94a5da566827dab4359b76be4fd9e8a5f353b37316fb.js?body=1" for 108.46.169.188 at 2016-02-27 16:06:01 +0000
+
+
+Started GET "/users/confirmation?confirmation_token=er8_qHyf4Fj_GXfrFRoT&" for 108.46.169.188 at 2016-02-27 16:06:31 +0000
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"er8_qHyf4Fj_GXfrFRoT"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["confirmation_token", "er8_qHyf4Fj_GXfrFRoT"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["confirmation_token", "64be9134c2330a0bb8645b8dc3e06270facdcf400324b4d97a634a28fa6eef98"]]
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (11.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/confirmations/new.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 88ms (Views: 84.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 108.46.169.188 at 2016-02-27 16:06:34 +0000
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 67ms (Views: 66.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 108.46.169.188 at 2016-02-27 16:07:17 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (7.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/sessions/new.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 151ms (Views: 149.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 108.46.169.188 at 2016-02-27 16:07:27 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lXubcn4Kwp+cgWiHDb/eVjY9nJS1ORKD3SjunMTfNQYo/eguEokrfBw0n4fyRkzYZKQ5wB84GmsSHqfKPjwu0A==", "user"=>{"email"=>"standard@standard.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "standard@standard.com"]]
+Completed 401 Unauthorized in 87ms (ActiveRecord: 0.4ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lXubcn4Kwp+cgWiHDb/eVjY9nJS1ORKD3SjunMTfNQYo/eguEokrfBw0n4fyRkzYZKQ5wB84GmsSHqfKPjwu0A==", "user"=>{"email"=>"standard@standard.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (4.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/sessions/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 155ms (Views: 76.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 108.46.169.188 at 2016-02-27 16:07:30 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OfsKJHDbg751mrmTwWyvEZXaviiC34EMYvHlAe2jDiGEfXl4HFhqXfUvTpM+lT2fx0MbfCjeieStx6xXF0AV9w==", "user"=>{"email"=>"standard@standard.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "standard@standard.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["current_sign_in_at", "2016-02-27 16:07:30.807106"], ["current_sign_in_ip", "108.46.169.188"], ["sign_in_count", 2], ["updated_at", "2016-02-27 16:07:30.808368"], ["id", 4]]
+  [1m[36m (11.7ms)[0m  [1mcommit transaction[0m
+Redirected to https://blocipedia-oceansource.c9users.io/
+Completed 302 Found in 107ms (ActiveRecord: 12.4ms)
+
+
+Started GET "/" for 108.46.169.188 at 2016-02-27 16:07:30 +0000
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered welcome/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 57ms (Views: 55.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/charges/new" for 108.46.169.188 at 2016-02-27 16:07:41 +0000
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered charges/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 197ms (Views: 194.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/confirmation?confirmation_token=er8_qHyf4Fj_GXfrFRoT&" for 108.46.169.188 at 2016-02-27 16:09:23 +0000
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"er8_qHyf4Fj_GXfrFRoT"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["confirmation_token", "er8_qHyf4Fj_GXfrFRoT"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["confirmation_token", "64be9134c2330a0bb8645b8dc3e06270facdcf400324b4d97a634a28fa6eef98"]]
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/shared/_links.html.erb (9.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/devise-3.5.3/app/views/devise/confirmations/new.html.erb within layouts/application (16.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+Completed 200 OK in 89ms (Views: 84.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 108.46.169.188 at 2016-02-27 16:10:17 +0000
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered welcome/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 80ms (Views: 72.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/charges/new" for 108.46.169.188 at 2016-02-27 16:10:20 +0000
+Processing by ChargesController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered charges/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 59ms (Views: 57.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/charges" for 108.46.169.188 at 2016-02-27 16:10:46 +0000
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BTOxc9r3EiXDhV5XdPNM3G/jCUIlr5SEZz+HVyVAhMoY31LJqh60ugzPQITxZPbRAxYg/22FuKTz0iWJPuIxTw==", "stripeToken"=>"tok_17jAeVFAVYhn01OpORq0DhJY", "stripeTokenType"=>"card", "stripeEmail"=>"standard@standard.com"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+Stripe::AuthenticationError (No API key provided. Set your API key using "Stripe.api_key = <API-KEY>". You can generate API keys from the Stripe web interface. See https://stripe.com/api for details, or email support@stripe.com if you have any questions.):
+  app/controllers/charges_controller.rb:16:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (74.0ms)
+
+
+Started POST "/charges" for 108.46.169.188 at 2016-02-27 16:14:36 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BTOxc9r3EiXDhV5XdPNM3G/jCUIlr5SEZz+HVyVAhMoY31LJqh60ugzPQITxZPbRAxYg/22FuKTz0iWJPuIxTw==", "stripeToken"=>"tok_17jAiDFAVYhn01OppWHzC8YP", "stripeTokenType"=>"card", "stripeEmail"=>"standard@standard.com"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (10.9ms)[0m  UPDATE "users" SET "role" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["role", 1], ["updated_at", "2016-02-27 16:14:37.487152"], ["id", 4]]
+  [1m[36m (8.6ms)[0m  [1mcommit transaction[0m
+Redirected to https://blocipedia-oceansource.c9users.io/
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Completed 302 Found in 932ms (ActiveRecord: 21.2ms)
+
+
+Started GET "/" for 108.46.169.188 at 2016-02-27 16:14:37 +0000
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered welcome/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 492ms (Views: 491.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/charges/downgrade" for 108.46.169.188 at 2016-02-27 16:15:21 +0000
+Processing by ChargesController#downgrade as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "role" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["role", 0], ["updated_at", "2016-02-27 16:15:21.295819"], ["id", 4]]
+  [1m[35m (50.8ms)[0m  commit transaction
+Redirected to https://blocipedia-oceansource.c9users.io/
+Completed 302 Found in 57ms (ActiveRecord: 51.3ms)
+
+
+Started GET "/" for 108.46.169.188 at 2016-02-27 16:15:21 +0000
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered welcome/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 71ms (Views: 70.2ms | ActiveRecord: 0.2ms)
