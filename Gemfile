@@ -37,3 +37,5 @@ source 'https://rubygems.org'
  gem 'faker'
  
  gem 'stripe'
+ 
+ gem 'redcarpet'
