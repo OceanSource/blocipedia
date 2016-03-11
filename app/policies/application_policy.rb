@@ -35,8 +35,9 @@ class ApplicationPolicy
   end
 
   def scope
-    Pundit.policy_scope!(user, record.class)
+    #Pundit.policy_scope!(user, record.class)
     # record.class - will return the class of the record being authorized
+    record.class
   end
 
   class Scope

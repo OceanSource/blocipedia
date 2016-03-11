@@ -12,15 +12,22 @@
 #
 
 class Wiki < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :user, dependent: :destroy
+  has_many :collaborations
+  has_many :collaborators, through: :collaborations, source: :user
   
   scope :visible_to, -> (user) { user ? all : where(private: false) }
 
-  after_initialize :make_public
+  # :make_public
   ## Method causes problems when making wikis private
 
   default_scope { order('created_at DESC') }
+  scope :private_wikis, -> (user) { where(private: true) }
+  scope :public_wikis, -> (user) { where(private: false) }
 
+  def public?
+    self.private == false
+  end
 
   def private?
    self.private == true
